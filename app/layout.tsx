@@ -15,9 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-50 px-10 sm:px-10 md:px-10 lg:px-28 min-h-screen">
         <NavBar />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
