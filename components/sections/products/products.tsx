@@ -68,7 +68,7 @@ export default function Products() {
             <div>
                 <ProductsCarausel />
             </div>
-            <div className="absolute bottom-0 w-screen left-[50%] translate-x-[-50%] border-b-2" />
+            <hr />
         </div>
     );
 }
