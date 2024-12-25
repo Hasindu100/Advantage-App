@@ -1,8 +1,8 @@
 import { Roboto } from 'next/font/google'
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBar from "../components/sections/navBar/navBar";
-import Footer from "../components/sections/footer/footer";
+import NavBar from "../components/homeSections/navBar/navBar";
+import Footer from "../components/homeSections/footer/footer";
 
 export const metadata: Metadata = {
   title: "Zone24x7 Inc",

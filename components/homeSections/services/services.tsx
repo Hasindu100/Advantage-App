@@ -2,7 +2,7 @@
 
 import ServicesGallery from "./servicesGallery";
 import { motion } from "framer-motion";
-import TitleIcon from "../../uiElements/titleIcon";
+import TitleIcon from "../../homeUiElements/titleIcon";
 
 export default function Services() {
     const contentVariants = {
