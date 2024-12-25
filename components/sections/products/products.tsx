@@ -1,16 +1,15 @@
 'use client';
 
-import React from 'react';
-import ProductsCarousel from "./productsCarousel";
+import React, { useState } from 'react';
+import ProductsCarousel from "./productsCarousel"
 import Image from "next/image";
 import TitleIcon from "../../uiElements/titleIcon";
 import { motion } from "framer-motion";
 import { Metadata } from 'next';
 
-// SEO Metadata configuration
 export const metadata: Metadata = {
     title: 'Premium Product Collection | Zone24x7 Solutions',
-    description: 'Explore Zone24x7\'s innovative technology solutions including Warehouse Management, AI Chatbot, CVAP Analytics, and Planogram. Transform your business with our cutting-edge products.',
+    description: 'Explore Zone24x7\'s innovative technology solutions including Warehouse Management, AI Chatbot, CVAP Analytics, and Planogram.',
     keywords: 'Warehouse Management, AI Chatbot, CVAP Analytics, Planogram, Zone24x7 products, technology solutions',
     openGraph: {
         title: 'Premium Product Collection | Zone24x7',
@@ -37,7 +36,6 @@ export const metadata: Metadata = {
     }
 };
 
-// Schema markup for the products page
 const pageSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -74,7 +72,6 @@ const pageSchema = {
     }
 };
 
-// Generate metadata with schema
 export function generateMetadata() {
     return {
         ...metadata,
@@ -88,6 +85,9 @@ export function generateMetadata() {
 }
 
 export default function Products() {
+    const [activeSlide, setActiveSlide] = useState(0);
+    const totalSlides = 4;
+
     const contentVariants = {
         hidden: {
             x: -100,
@@ -103,6 +103,14 @@ export default function Products() {
         }
     };
 
+    const handleSlideChange = (swiper: any) => {
+        setActiveSlide(swiper.realIndex);
+    };
+
+    const goToSlide = (index: number) => {
+        setActiveSlide(index);
+    };
+
     return (
         <div className="relative w-full overflow-hidden">
             <div className="flex relative">
@@ -115,6 +123,21 @@ export default function Products() {
                         className="object-contain"
                         priority
                     />
+                </div>
+
+                {/* Pagination dots */}
+                <div className="hidden md:flex absolute right-12 top-96 z-10 items-center gap-3 bg-white bg-opacity-50 px-4 py-2 rounded-full">
+                    {Array.from({ length: totalSlides }).map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setActiveSlide(index)}
+                            className={`w-4 h-4 rounded-full transition-all duration-300 
+                                ${activeSlide === index
+                                    ? 'bg-red-500 scale-110 shadow-lg'
+                                    : 'bg-gray-300 hover:bg-gray-400'}`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
                 </div>
 
                 <motion.div
@@ -161,8 +184,8 @@ export default function Products() {
                 </motion.div>
             </div>
 
-            <div>
-                <ProductsCarousel />
+            <div className="relative">
+                <ProductsCarousel onSlideChange={handleSlideChange} activeIndex={activeSlide} />
             </div>
 
             <hr className="mt-6 sm:mt-8 md:mt-12" />
