@@ -1,11 +1,10 @@
-// page.tsx
 'use client';
 
 import React, { useState } from 'react';
 import type { Swiper as SwiperType } from 'swiper';
 import ProductsCarousel from "./productsCarousel";
 import Image from "next/image";
-import TitleIcon from "@/components/uiElements/titleIcon";
+import TitleIcon from "@/components/homeUiElements/titleIcon";
 import { motion } from "framer-motion";
 
 export default function Products() {

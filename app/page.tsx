@@ -1,12 +1,12 @@
-import Hero from '../components/sections/hero/hero';
-import Product from '../components/sections/products/products';
-import Services from '../components/sections/services/services';
-import Idea from '../components/sections/idea/idea';
-import CaseStudies from '../components/sections/caseStudies/caseStudies';
-import Partners from '../components/sections/partners/partners';
-import PodCasts from '../components/sections/podCasts/podCasts';
-import NewsAndUpdates from '../components/sections/newsAndUpdates/newsAndUpdates';
-import Careers from '../components/sections/careers/careers';
+import Hero from '../components/homeSections/hero/hero';
+import Product from '../components/homeSections/products/products';
+import Services from '../components/homeSections/services/services';
+import Idea from '../components/homeSections/idea/idea';
+import CaseStudies from '../components/homeSections/caseStudies/caseStudies';
+import Partners from '../components/homeSections/partners/partners';
+import PodCasts from '../components/homeSections/podCasts/podCasts';
+import NewsAndUpdates from '../components/homeSections/newsAndUpdates/newsAndUpdates';
+import Careers from '../components/homeSections/careers/careers';
 
 
 export default function Home() {
