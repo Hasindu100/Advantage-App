@@ -134,18 +134,18 @@ export default function Products() {
                         </div>
 
                         <div className="w-full sm:w-fit">
-                            <h1 className="text-custom-2 tracking-custom-2 font-bold text-2xl sm:text-3xl md:text-5xl">
+                            <h1 className="text-custom-4 md:text-custom-2 tracking-custom-2 font-extrabold">
                                 Explore Our Premium{" "}
                                 <br className="hidden md:block" /> Product Collection
                             </h1>
                         </div>
 
-                        <div className="max-w-2xl tracking-normal text-custom-3 text-gray-500 text-sm sm:text-base md:text-xl">
+                        <div className="max-w-2xl tracking-normal text-custom-3 text-gray-500 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xl leading-relaxed">
                             <p>
                                 Discover a range of top-quality products designed to meet your needs
                                 and exceed your expectations. Whether you're looking for innovation,
                                 durability, or style, our carefully curated selection offers something
-                                for everyone.
+                                for everyone.Shop now and experience the best in craftsmanship and value.
                             </p>
                         </div>
 

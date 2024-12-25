@@ -78,7 +78,7 @@ const ProductCard = ({ title, logo, description, isSelected }) => (
                     {logo}
                 </div>
             </div>
-            <p className="text-gray-600 text-xs sm:text-sm line-clamp-3 sm:line-clamp-none">{description}</p>
+            <p className="text-gray-600 text-sm sm:text-base md:text-base leading-relaxed line-clamp-3 sm:line-clamp-none">{description}</p>
         </div>
     </div>
 );
@@ -90,7 +90,7 @@ const ProductsCarousel = () => {
         {
             title: "Warehouse Management",
             logo: (
-                <div className="w-24 sm:w-32">
+                <div className="w-28 sm:w-32">
                     <Image
                         src="/images/products/acetrac.png"
                         alt="AceTrak Logo - Warehouse Management Solution"
@@ -106,7 +106,7 @@ const ProductsCarousel = () => {
         {
             title: "Chatbot",
             logo: (
-                <div className="w-8 sm:w-12">
+                <div className="w-10 sm:w-12">
                     <Image
                         src="/images/products/sam.png"
                         alt="AI Chatbot Solution for Customer Engagement"
@@ -122,7 +122,7 @@ const ProductsCarousel = () => {
         {
             title: "CVAP (Cognitive Vision Analytics)",
             logo: (
-                <div className="w-28 sm:w-36">
+                <div className="w-32 sm:w-36">
                     <Image
                         src="/images/products/cvap.png"
                         alt="CVAP - Advanced Vision Analytics Platform"
@@ -138,7 +138,7 @@ const ProductsCarousel = () => {
         {
             title: "Planogram",
             logo: (
-                <div className="w-24 sm:w-32">
+                <div className="w-28 sm:w-32">
                     <Image
                         src="/images/products/shelf.png"
                         alt="Planogram Solution for Retail Management"
