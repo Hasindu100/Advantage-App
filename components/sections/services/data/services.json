@@ -1,0 +1,40 @@
+{
+    "services": [
+        {
+            "id": "software-engineering",
+            "title": "Software\nEngineering\nSolutions",
+            "image": "/images/services/tl.jpg",
+            "description": "Delivering Enduring Growth With"
+        },
+        {
+            "id": "tech-innovation",
+            "title": "Technology\nInnovation",
+            "image": "/images/services/lb.jpg",
+            "description": "Productivity Improvements With"
+        },
+        {
+            "id": "ai-data",
+            "title": "Artificial Intelligence & Data Science",
+            "image": "/images/services/tm.jpg",
+            "description": "Omni-channel Personalized Product Recommendations With"
+        },
+        {
+            "id": "warehousing",
+            "title": "Next Gen\nWarehousing &\nLogistics",
+            "image": "/images/services/m.jpg",
+            "description": "PROFESSIONAL SERVICES"
+        },
+        {
+            "id": "embedded",
+            "title": "Embedded\nSystems\nSolutions",
+            "video": "/images/services/l.mp4",
+            "description": "Streamline With"
+        },
+        {
+            "id": "iot",
+            "title": "IoT & IoB",
+            "image": "/images/services/b.jpg",
+            "description": "Remote Monitoring With"
+        }
+    ]
+}

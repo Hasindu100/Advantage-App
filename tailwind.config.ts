@@ -16,6 +16,7 @@ export default {
       letterSpacing: {
         'custom': '14px',
         'custom-2': '1px',
+        'custom-3': '4px',
       },
       fontSize: {
         'custom': '13.5px',
@@ -25,6 +26,10 @@ export default {
       },
       fontFamily: {
         sans: ['Roboto', 'sans-serif'],
+      },
+
+      fontWeight: {
+        'custom': '900',
       },
     },
   },

@@ -7,86 +7,6 @@ import ProductsCarousel from "./productsCarousel";
 import Image from "next/image";
 import TitleIcon from "@/components/uiElements/titleIcon";
 import { motion } from "framer-motion";
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: 'Premium Product Collection | Zone24x7 Solutions',
-    description: 'Explore Zone24x7\'s innovative technology solutions including Warehouse Management, AI Chatbot, CVAP Analytics, and Planogram.',
-    keywords: 'Warehouse Management, AI Chatbot, CVAP Analytics, Planogram, Zone24x7 products, technology solutions',
-    openGraph: {
-        title: 'Premium Product Collection | Zone24x7',
-        description: 'Discover our range of innovative technology solutions designed to transform your business operations and drive growth.',
-        url: 'https://zone24x7.com/products',
-        images: [
-            {
-                url: '/images/products/product-collection.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'Zone24x7 Product Collection',
-            }
-        ],
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Premium Product Collection | Zone24x7',
-        description: 'Transform your business with our innovative technology solutions.',
-        images: ['/images/products/product-collection.jpg'],
-    },
-    alternates: {
-        canonical: 'https://zone24x7.com/products',
-    }
-};
-
-const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Zone24x7 Product Collection',
-    description: 'Explore our premium collection of innovative technology solutions designed to transform your business.',
-    mainEntity: {
-        '@type': 'ItemList',
-        itemListElement: [
-            {
-                '@type': 'Product',
-                name: 'Warehouse Management System',
-                description: 'Comprehensive warehouse management solution for digital transformation.',
-                image: '/images/products/acetrac.png'
-            },
-            {
-                '@type': 'Product',
-                name: 'AI Chatbot',
-                description: 'Intelligent chatbot solution for enhanced customer engagement.',
-                image: '/images/products/sam.png'
-            },
-            {
-                '@type': 'Product',
-                name: 'CVAP Analytics',
-                description: 'Advanced cognitive vision analytics for real-time insights.',
-                image: '/images/products/cvap.png'
-            },
-            {
-                '@type': 'Product',
-                name: 'Planogram Solution',
-                description: 'Retail optimization through intelligent planogram management.',
-                image: '/images/products/shelf.png'
-            }
-        ]
-    }
-};
-
-export function generateMetadata(): Metadata {
-    return {
-        ...metadata,
-        other: {
-            'script': [
-                {
-                    type: 'application/ld+json',
-                    text: JSON.stringify(pageSchema)
-                }
-            ]
-        }
-    };
-}
 
 export default function Products() {
     const [activeSlide, setActiveSlide] = useState<number>(0);
@@ -182,7 +102,7 @@ export default function Products() {
                         <div className="max-w-2xl tracking-normal text-custom-3 text-gray-500 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xl leading-relaxed">
                             <p>
                                 Discover a range of top-quality products designed to meet your needs
-                                and exceed your expectations. Whether you're looking for innovation,
+                                and exceed your expectations. Whether you&apos;re looking for innovation,
                                 durability, or style, our carefully curated selection offers something
                                 for everyone.Shop now and experience the best in craftsmanship and value.
                             </p>
@@ -207,7 +127,7 @@ export default function Products() {
                 />
             </div>
 
-            <hr className="mt-6 sm:mt-8 md:mt-12" />
+            <hr className="mt-6 sm:mt-8 md:mt-20" />
         </div>
     );
 }
