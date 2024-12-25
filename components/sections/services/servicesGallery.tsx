@@ -2,61 +2,22 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import servicesData from './data/services.json';
+import { serviceStyles } from './services-config';
 
 interface ServiceCard {
+    id: string;
     title: string;
-    subtitle?: string;
-    image: string;
+    image?: string;
     video?: string;
     description?: string;
-    titleClassName?: string;
 }
 
-const services: ServiceCard[] = [
-    // First Column
-    {
-        title: 'Software\nEngineering\nSolutions',
-        image: '/images/services/tl.jpg',
-        description: 'Delivering Enduring Growth With',
-        titleClassName: 'text-cyan-300'
-    },
-    {
-        title: 'Technology\nInnovation',
-        image: '/images/services/lb.jpg',
-        description: 'Productivity Improvements With'
-    },
-    // Middle Column
-    {
-        title: 'Artificial Intelligence & Data Science',
-        image: '/images/services/tm.jpg',
-        description: 'Omni-channel Personalized Product Recommendations With'
-    },
-    {
-        title: 'Next Gen\nWarehousing &\nLogistics',
-        image: '/images/services/m.jpg',
-        description: 'PROFESSIONAL SERVICES',
-        titleClassName: 'text-orange-400'
-    },
-    // Right Column
-    {
-        title: 'Embedded\nSystems\nSolutions',
-        video: '/images/services/l.mp4',
-        description: 'Streamline With',
-        titleClassName: 'text-green-400',
-        image: ''
-    },
-    // Bottom Merged
-    {
-        title: 'IoT & IoB',
-        image: '/images/services/b.jpg',
-        description: 'Remote Monitoring With'
-    },
-];
-
-const ServiceCard = ({ title, image, video, description, titleClassName }: ServiceCard) => {
+const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
     const [videoLoaded, setVideoLoaded] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [videoElement, setVideoElement] = useState<HTMLVideoElement | null>(null);
+    const styles = serviceStyles[id as keyof typeof serviceStyles];
 
     useEffect(() => {
         if (videoElement) {
@@ -86,10 +47,8 @@ const ServiceCard = ({ title, image, video, description, titleClassName }: Servi
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            {/* Background Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-50 z-10" />
 
-            {/* Media Container */}
             {video ? (
                 <video
                     ref={setVideoElement}
@@ -112,7 +71,7 @@ const ServiceCard = ({ title, image, video, description, titleClassName }: Servi
                     }}
                 >
                     <Image
-                        src={image}
+                        src={image || ''}
                         alt={title}
                         fill
                         sizes="100%"
@@ -122,14 +81,13 @@ const ServiceCard = ({ title, image, video, description, titleClassName }: Servi
                 </div>
             )}
 
-            {/* Content Overlay */}
             <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end text-white z-20">
                 {description && (
                     <p className="text-xs sm:text-sm mb-1 sm:mb-2 opacity-90">
                         {description}
                     </p>
                 )}
-                <h3 className={`text-xl sm:text-2xl font-bold whitespace-pre-line ${titleClassName || ''}`}>
+                <h3 className={`whitespace-pre-line ${styles.titleClassName || ''} ${styles.titleSize || 'text-xl sm:text-2xl'} ${styles.letterSpacing || ''} ${styles.lineHeight || 'leading-normal'} ${styles.fontWeight || 'font-bold'}`}>
                     {title}
                 </h3>
             </div>
@@ -138,12 +96,12 @@ const ServiceCard = ({ title, image, video, description, titleClassName }: Servi
 };
 
 export default function ServicesGallery() {
+    const services = servicesData.services;
+
     return (
         <div className="container mx-auto p-2 sm:p-4">
-            {/* Desktop Layout (md and up) */}
             <div className="hidden md:block relative w-full pb-[100%]">
                 <div className="absolute inset-0 flex gap-5">
-                    {/* First Column - flex-1 */}
                     <div className="flex-1 flex flex-col gap-5">
                         <div className="flex-1">
                             <ServiceCard {...services[0]} />
@@ -153,12 +111,9 @@ export default function ServicesGallery() {
                         </div>
                     </div>
 
-                    {/* Middle and Right Columns Container - flex-2 */}
-                    <div className="flex-[3.5] flex flex-col gap-5">
-                        {/* Top Row */}
+                    <div className="flex-[3.2] flex flex-col gap-5">
                         <div className="flex-[2.2] flex gap-5">
-                            {/* Middle Column Top - flex-[1.3] */}
-                            <div className="flex-[2.5] flex flex-col gap-5">
+                            <div className="flex-[2.2] flex flex-col gap-5">
                                 <div className="flex-[1.2]">
                                     <ServiceCard {...services[2]} />
                                 </div>
@@ -166,13 +121,10 @@ export default function ServicesGallery() {
                                     <ServiceCard {...services[3]} />
                                 </div>
                             </div>
-                            {/* Right Column - flex-1 */}
                             <div className="flex-1">
                                 <ServiceCard {...services[4]} />
                             </div>
                         </div>
-
-                        {/* Bottom Merged Row */}
                         <div className="flex-[0.7]">
                             <ServiceCard {...services[5]} />
                         </div>
@@ -180,10 +132,9 @@ export default function ServicesGallery() {
                 </div>
             </div>
 
-            {/* Mobile Layout (sm and below) */}
             <div className="md:hidden grid grid-cols-1 gap-5">
-                {services.map((service, index) => (
-                    <div key={index} className="relative pb-[100%]">
+                {services.map((service) => (
+                    <div key={service.id} className="relative pb-[100%]">
                         <div className="absolute inset-0">
                             <ServiceCard {...service} />
                         </div>

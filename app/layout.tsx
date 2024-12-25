@@ -1,3 +1,4 @@
+import { Roboto } from 'next/font/google'
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "../components/sections/navBar/navBar";
@@ -11,13 +12,19 @@ export const metadata: Metadata = {
   }
 };
 
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.className}>
       <body className="bg-gray-50 min-h-screen overflow-x-hidden">
         <div className="px-2 sm:px-4 md:px-8 lg:px-16 xl:px-28 max-w-full">
           <NavBar />

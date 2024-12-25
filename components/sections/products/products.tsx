@@ -127,7 +127,7 @@ export default function Products() {
                 />
             </div>
 
-            <hr className="mt-6 sm:mt-8 md:mt-12" />
+            <hr className="mt-6 sm:mt-8 md:mt-20" />
         </div>
     );
 }
