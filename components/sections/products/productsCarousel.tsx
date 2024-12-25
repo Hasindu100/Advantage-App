@@ -23,7 +23,7 @@ interface ProductsCarouselProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ title, logo, description }) => (
     <div className="h-64 space-y-2">
-        <h2 className="text-lg font-bold truncate">{title}</h2>
+        <h2 className="text-lg font-custom-2 tracking-widest truncate">{title}</h2>
         <div className="bg-white p-4 rounded-sm w-full h-52 cursor-pointer border border-gray-200 hover:border-red-500 transition-colors duration-500 ease-in-out flex flex-col">
             <div className="h-12 flex items-center mb-3">
                 <div className="transform scale-100 origin-left">

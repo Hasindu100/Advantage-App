@@ -30,6 +30,7 @@ export default {
 
       fontWeight: {
         'custom': '900',
+        'custom-2': '500',
       },
     },
   },
