@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   }
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,12 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 px-10 sm:px-10 md:px-10 lg:px-28 min-h-screen">
-        <NavBar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+      <body className="bg-gray-50 min-h-screen overflow-x-hidden">
+        <div className="px-2 sm:px-4 md:px-8 lg:px-16 xl:px-28 max-w-full">
+          <NavBar />
+          <main className="w-full">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

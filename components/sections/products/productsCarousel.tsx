@@ -4,23 +4,24 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const ProductCard = ({ title, logo, description, isSelected }) => (
-    <div className="space-y-4">
-        <h2 className="text-xl font-bold">{title}</h2>
+    <div className="space-y-2 sm:space-y-4">
+        <h2 className="text-lg sm:text-xl font-bold">{title}</h2>
         <div
-            className={`bg-white p-6 rounded-sm w-full cursor-pointer border 
-                transition-colors duration-300
+            className={`bg-white p-3 sm:p-6 rounded-sm w-full cursor-pointer border 
+                transition-colors duration-500 ease-in-out
                 ${isSelected ? 'border-red-500' : 'border-gray-200 hover:border-red-500'}`}
             style={{ aspectRatio: '16/9' }}
         >
-            <div className="mb-4 relative">
-                {logo}
+            <div className="mb-2 sm:mb-4 relative">
+                <div className="transform scale-75 sm:scale-100 origin-left">
+                    {logo}
+                </div>
             </div>
-            <p className="text-gray-600 text-sm">{description}</p>
+            <p className="text-gray-600 text-xs sm:text-sm line-clamp-3 sm:line-clamp-none">{description}</p>
         </div>
     </div>
 );
@@ -32,12 +33,12 @@ const ProductsCarousel = () => {
         {
             title: "Warehouse Management",
             logo: (
-                <div className="w-24">
+                <div className="w-24 sm:w-32">
                     <Image
-                        src="/api/placeholder/96/96"
+                        src="/images/products/acetrac.png"
                         alt="AceTrak Logo"
-                        width={96}
-                        height={96}
+                        width={128}
+                        height={128}
                         className="w-full"
                     />
                 </div>
@@ -47,12 +48,12 @@ const ProductsCarousel = () => {
         {
             title: "Chatbot",
             logo: (
-                <div className="w-16">
+                <div className="w-8 sm:w-12">
                     <Image
-                        src="/api/placeholder/64/64"
+                        src="/images/products/sam.png"
                         alt="Chatbot Icon"
-                        width={64}
-                        height={64}
+                        width={78}
+                        height={78}
                         className="w-full rounded-full"
                     />
                 </div>
@@ -62,12 +63,12 @@ const ProductsCarousel = () => {
         {
             title: "CVAP (Cognitive Vision Analytics)",
             logo: (
-                <div className="w-32">
+                <div className="w-28 sm:w-36">
                     <Image
-                        src="/api/placeholder/128/48"
+                        src="/images/products/cvap.png"
                         alt="CVAP Logo"
                         width={128}
-                        height={48}
+                        height={128}
                         className="w-full"
                     />
                 </div>
@@ -75,19 +76,19 @@ const ProductsCarousel = () => {
             description: "CVAP uses AI to analyze visual data, enabling real-time object detection, activity recognition, and insights to improve efficiency, safety, and customer experiences across industries."
         },
         {
-            title: "Advanced Analytics",
+            title: "Planogram",
             logo: (
-                <div className="w-24">
+                <div className="w-24 sm:w-32">
                     <Image
-                        src="/api/placeholder/96/96"
+                        src="/images/products/shelf.png"
                         alt="Analytics Logo"
-                        width={96}
-                        height={96}
+                        width={128}
+                        height={128}
                         className="w-full"
                     />
                 </div>
             ),
-            description: "Powerful analytics platform providing real-time insights and predictive modeling to drive data-informed decision making."
+            description: "Planograms empower retailers to create a cohesive and inviting shopping experience while maximizing sales potential and improving inventory management."
         }
     ];
 
@@ -95,7 +96,7 @@ const ProductsCarousel = () => {
         <div className="w-full">
             <Swiper
                 modules={[Pagination, Autoplay]}
-                spaceBetween={20}
+                spaceBetween={16}
                 slidesPerView={1}
                 pagination={{ clickable: true }}
                 autoplay={{
@@ -105,16 +106,15 @@ const ProductsCarousel = () => {
                 loop={true}
                 breakpoints={{
                     640: {
-                        slidesPerView: 3,
+                        slidesPerView: 2,
+                        spaceBetween: 20,
                     },
                     1024: {
                         slidesPerView: 3,
-                    },
-                    1280: {
-                        slidesPerView: 3,
+                        spaceBetween: 20,
                     },
                 }}
-                className="w-full py-4"
+                className="w-full py-4 px-4 sm:px-0"
             >
                 {products.map((product, index) => (
                     <SwiperSlide key={index}>
