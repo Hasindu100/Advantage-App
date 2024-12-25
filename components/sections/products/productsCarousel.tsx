@@ -1,32 +1,31 @@
+// ProductsCarousel.tsx
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import Image from 'next/image';
 import 'swiper/css';
 
-interface ProductCardProps {
+type Product = {
     title: string;
     logo: React.ReactNode;
     description: string;
-}
+};
+
+interface ProductCardProps extends Product { }
 
 interface ProductsCarouselProps {
     onSlideChange: (swiper: SwiperType) => void;
     activeIndex: number;
 }
 
-const ProductCard = ({ title, logo, description }: ProductCardProps) => (
+const ProductCard: React.FC<ProductCardProps> = ({ title, logo, description }) => (
     <div className="h-64 space-y-2">
         <h2 className="text-lg font-bold truncate">{title}</h2>
-        <div
-            className="bg-white p-4 rounded-sm w-full h-52 cursor-pointer border 
-                border-gray-200 hover:border-red-500 transition-colors duration-500 ease-in-out flex flex-col"
-        >
-            {/* Increased height for logo container */}
-            <div className="h-12 flex items-center mb-3 ">
+        <div className="bg-white p-4 rounded-sm w-full h-52 cursor-pointer border border-gray-200 hover:border-red-500 transition-colors duration-500 ease-in-out flex flex-col">
+            <div className="h-12 flex items-center mb-3">
                 <div className="transform scale-100 origin-left">
                     {logo}
                 </div>
@@ -38,7 +37,7 @@ const ProductCard = ({ title, logo, description }: ProductCardProps) => (
     </div>
 );
 
-const products = [
+const products: Product[] = [
     {
         title: "Warehouse Management",
         logo: (
@@ -106,16 +105,16 @@ const products = [
 ];
 
 const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ onSlideChange, activeIndex }) => {
-    const [swiper, setSwiper] = React.useState<SwiperType | null>(null);
+    const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (swiper && swiper.realIndex !== activeIndex) {
             swiper.slideToLoop(activeIndex);
         }
     }, [activeIndex, swiper]);
 
     return (
-        <div className="w-full">
+        <div className="relative w-full">
             <Swiper
                 modules={[Autoplay]}
                 spaceBetween={16}
@@ -141,11 +140,7 @@ const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ onSlideChange, acti
             >
                 {products.map((product, index) => (
                     <SwiperSlide key={index}>
-                        <ProductCard
-                            title={product.title}
-                            logo={product.logo}
-                            description={product.description}
-                        />
+                        <ProductCard {...product} />
                     </SwiperSlide>
                 ))}
             </Swiper>

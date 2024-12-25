@@ -1,11 +1,13 @@
+// page.tsx
 'use client';
 
 import React, { useState } from 'react';
-import ProductsCarousel from "./productsCarousel"
+import type { Swiper as SwiperType } from 'swiper';
+import ProductsCarousel from "./productsCarousel";
 import Image from "next/image";
-import TitleIcon from "../../uiElements/titleIcon";
+import TitleIcon from "@/components/uiElements/titleIcon";
 import { motion } from "framer-motion";
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Premium Product Collection | Zone24x7 Solutions',
@@ -72,21 +74,22 @@ const pageSchema = {
     }
 };
 
-export function generateMetadata() {
+export function generateMetadata(): Metadata {
     return {
         ...metadata,
-        script: [
-            {
-                type: 'application/ld+json',
-                text: JSON.stringify(pageSchema)
-            }
-        ]
+        other: {
+            'script': [
+                {
+                    type: 'application/ld+json',
+                    text: JSON.stringify(pageSchema)
+                }
+            ]
+        }
     };
 }
 
 export default function Products() {
-    const [activeSlide, setActiveSlide] = useState(0);
-    const totalSlides = 4;
+    const [activeSlide, setActiveSlide] = useState<number>(0);
 
     const contentVariants = {
         hidden: {
@@ -103,41 +106,54 @@ export default function Products() {
         }
     };
 
-    const handleSlideChange = (swiper: any) => {
+    const handleSlideChange = (swiper: SwiperType) => {
         setActiveSlide(swiper.realIndex);
     };
 
-    const goToSlide = (index: number) => {
-        setActiveSlide(index);
+    const handleNext = () => {
+        const nextIndex = (activeSlide + 1) % 4;
+        setActiveSlide(nextIndex);
+    };
+
+    const handlePrev = () => {
+        const prevIndex = (activeSlide - 1 + 4) % 4;
+        setActiveSlide(prevIndex);
     };
 
     return (
         <div className="relative w-full overflow-hidden">
             <div className="flex relative">
                 <div className="hidden md:block absolute right-0 top-0">
-                    <Image
-                        src="/images/products/bgFrame.png"
-                        width={500}
-                        height={500}
-                        alt="Products section decorative background"
-                        className="object-contain"
-                        priority
-                    />
-                </div>
-
-                {/* Pagination dots */}
-                <div className="hidden md:flex absolute right-12 top-96 z-10 items-center gap-3 bg-white bg-opacity-50 px-4 py-2 rounded-full">
-                    {Array.from({ length: totalSlides }).map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setActiveSlide(index)}
-                            className={`w-4 h-4 rounded-full transition-all duration-300 
-                                ${activeSlide === index
-                                    ? 'bg-red-500 scale-110 shadow-lg'
-                                    : 'bg-gray-300 hover:bg-gray-400'}`}
-                            aria-label={`Go to slide ${index + 1}`}
+                    <div className="relative">
+                        <Image
+                            src="/images/products/bgFrame.png"
+                            width={500}
+                            height={500}
+                            alt="Products section decorative background"
+                            className="object-contain"
+                            priority
                         />
-                    ))}
+                        <div className="absolute -bottom-12 right-0 z-10 flex items-center gap-3 px-4 py-2">
+                            <button
+                                onClick={handlePrev}
+                                className={`w-4 h-4 rounded-full transition-all duration-300 hover:scale-110
+            ${activeSlide === 0 || activeSlide === 1
+                                        ? 'bg-red-500 scale-110 shadow-lg'
+                                        : 'bg-gray-300 hover:bg-red-500 border border-gray-500'
+                                    }`}
+                                aria-label="Previous slide"
+                            />
+                            <button
+                                onClick={handleNext}
+                                className={`w-4 h-4 rounded-full transition-all duration-300 hover:scale-110
+            ${activeSlide === 2 || activeSlide === 3
+                                        ? 'bg-red-500 scale-110 shadow-lg'
+                                        : 'bg-gray-300 hover:bg-red-500 border border-gray-500'
+                                    }`}
+                                aria-label="Next slide"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 <motion.div
@@ -185,7 +201,10 @@ export default function Products() {
             </div>
 
             <div className="relative">
-                <ProductsCarousel onSlideChange={handleSlideChange} activeIndex={activeSlide} />
+                <ProductsCarousel
+                    onSlideChange={handleSlideChange}
+                    activeIndex={activeSlide}
+                />
             </div>
 
             <hr className="mt-6 sm:mt-8 md:mt-12" />
