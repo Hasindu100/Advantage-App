@@ -21,7 +21,7 @@ export default {
       fontSize: {
         'custom': '13.5px',
         'custom-2': '52px',
-        'custom-3': '18px',
+        'custom-3': '16px',
         'custom-4': '32px',
       },
       fontFamily: {
