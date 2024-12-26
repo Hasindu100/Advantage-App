@@ -1,6 +1,11 @@
-import { imageConfigs } from '../config'
+import { imageConfigs } from '../config';
 import { Product } from '../types';
 
+/**
+ * Main product catalog
+ * Contains all product information for the application
+ * @type {Product[]}
+ */
 export const products: Product[] = [
     {
         title: "Warehouse Management",
@@ -30,4 +35,11 @@ export const products: Product[] = [
         description: "Planograms empower retailers to create a cohesive shopping experience.",
         imageConfig: imageConfigs.planogram
     }
-];
+] as const;  // Make array immutable
+
+// Export product IDs for type-safe access
+export type ProductId = typeof products[number]['title'];
+
+// Utility function to get product by title
+export const getProductByTitle = (title: ProductId): Product | undefined => 
+    products.find(product => product.title === title);
