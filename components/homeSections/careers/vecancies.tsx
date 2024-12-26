@@ -1,11 +1,19 @@
 'use client';
 
-import { useMemo } from 'react';
+/**
+ * @fileoverview This component implements a job listings page that displays available positions
+ * and internship opportunities. It includes animated job cards, a header with company branding,
+ * and a dedicated internship section.
+ */
 
+import { useMemo } from 'react';
 import Image from 'next/image';
 import jobListingsData from './data/jobListings.json';
 
+// Import motion library for animations
 import { motion } from 'framer-motion';
+
+// Font Awesome configuration and imports
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,15 +23,21 @@ import {
     faAngleDoubleRight
 } from '@fortawesome/free-solid-svg-icons';
 
-// Prevent Font Awesome from auto-injecting its CSS
+// Prevent Font Awesome from auto-injecting its CSS to avoid conflicts
 config.autoAddCss = false;
 
-// Constants
-const INTERNSHIP_COUNT = 1;
-const ANIMATION_DELAY = 0.2;
-const HOVER_SCALE = 1.02;
+// Application-wide constants
+const INTERNSHIP_COUNT = 1;              // Number of available internship positions
+const ANIMATION_DELAY = 0.2;             // Delay between each job card animation
+const HOVER_SCALE = 1.02;                // Scale factor for card hover effect
 
-// Define types for job listing data structure
+/**
+ * Interface defining the structure of a job listing
+ * @property {string} code - Unique identifier for the job position
+ * @property {string} title - Job title/position name
+ * @property {string} type - Employment type (e.g., Full-time, Part-time)
+ * @property {string} location - Job location/office
+ */
 interface JobListing {
     code: string;
     title: string;
@@ -31,12 +45,23 @@ interface JobListing {
     location: string;
 }
 
+/**
+ * Interface for the complete job listings data structure
+ * @property {JobListing[]} jobListings - Array of job listing objects
+ */
 interface JobListingsData {
     jobListings: JobListing[];
 }
 
-// Extracted components for better reusability and performance
+/**
+ * Individual job card component that displays job details with animation
+ * @component
+ * @param {Object} props - Component props
+ * @param {JobListing} props.job - Job listing data
+ * @param {number} props.index - Index for staggered animation
+ */
 const JobCard: React.FC<{ job: JobListing; index: number }> = ({ job, index }) => {
+    // Memoize animation variants to prevent unnecessary recalculations
     const cardVariants = useMemo(() => ({
         hidden: {
             x: -100,
@@ -65,6 +90,7 @@ const JobCard: React.FC<{ job: JobListing; index: number }> = ({ job, index }) =
             whileHover={{ scale: HOVER_SCALE }}
         >
             <div className="bg-white border border-gray-200 rounded-[5px] transition-all duration-500 group-hover:shadow-lg cursor-pointer h-full">
+                {/* Job details section */}
                 <div className="p-4 sm:p-6">
                     <div className="text-[11px] sm:text-[12px] font-bold text-white py-1 px-2 sm:px-3 rounded-sm inline-block mb-3 sm:mb-4 transition-colors duration-200 bg-gray-800 group-hover:bg-red-500">
                         {job.code}
@@ -82,6 +108,7 @@ const JobCard: React.FC<{ job: JobListing; index: number }> = ({ job, index }) =
                         {job.type}
                     </div>
                 </div>
+                {/* Footer section with location and arrow icon */}
                 <div className="border-t border-gray-200 px-4 sm:px-6 py-2 flex justify-between items-center tracking-custom-2">
                     <div className="text-[11px] sm:text-[12px] font-medium text-gray-500">
                         {job.location}
@@ -99,9 +126,15 @@ const JobCard: React.FC<{ job: JobListing; index: number }> = ({ job, index }) =
     );
 };
 
-// Header component
+/**
+ * Header component displaying company logo and job count
+ * @component
+ * @param {Object} props - Component props
+ * @param {number} props.jobCount - Total number of available positions
+ */
 const Header: React.FC<{ jobCount: number }> = ({ jobCount }) => (
     <header className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 border-b pb-4 border-gray-200 gap-4">
+        {/* Company logo */}
         <div className="flex items-center">
             <Image
                 src="/images/logo/logo.png"
@@ -112,6 +145,7 @@ const Header: React.FC<{ jobCount: number }> = ({ jobCount }) => (
                 priority
             />
         </div>
+        {/* Job count and link */}
         <div className="flex items-center">
             <span className="bg-custom-yellow text-black rounded-full px-3 sm:px-4 py-1 mr-3 sm:mr-5 text-xs sm:text-sm font-semibold">
                 {jobCount}
@@ -134,8 +168,14 @@ const Header: React.FC<{ jobCount: number }> = ({ jobCount }) => (
 );
 
 /**
- * Main Vacancies Component
- * Displays job listings and internship opportunities in a responsive grid layout
+ * Main Vacancies component that orchestrates the entire job listings page
+ * Features:
+ * - Responsive grid layout for job cards
+ * - Animated entry for job listings
+ * - Dedicated internship section
+ * - Accessible UI elements
+ * 
+ * @component
  */
 const Vacancies: React.FC = () => {
     const { jobListings } = jobListingsData as JobListingsData;
@@ -149,12 +189,15 @@ const Vacancies: React.FC = () => {
 
     return (
         <div className="w-full max-w-8xl mx-auto px-2 sm:px-6 lg:px-0 py-4 sm:py-8">
+            {/* Header with company branding and job count */}
             <Header jobCount={jobListings.length} />
 
+            {/* Job listings grid with responsive layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 mt-6 sm:mt-10">
                 {jobListingsElements}
             </div>
 
+            {/* Internship opportunities section */}
             <section className="bg-[#f6f6f695] border border-gray-200 px-4 sm:px-8 lg:px-14 py-6 sm:py-8 lg:py-10 rounded-[4px] mt-6 sm:mt-10">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
                     <div className="flex-1 text-center sm:text-left">
