@@ -81,7 +81,7 @@ export default function Services() {
 
                             {/* Main heading section */}
                             <div className="w-full text-center">
-                                <h1 className="text-custom-4 md:text-custom-2 tracking-custom-2 font-extrabold ">
+                                <h1 className="uppercase text-custom-4 md:text-custom-2 tracking-custom-2 font-extrabold ">
                                     End-to-End <br />
                                     Technology and <br />
                                     Innovations

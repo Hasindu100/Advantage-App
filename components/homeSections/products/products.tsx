@@ -135,7 +135,7 @@ export default function Products() {
                     <div className="flex flex-col gap-4 md:gap-7 max-w-3xl">
                         {/* Section header with icon */}
                         <div className="bg-custom-red py-1 px-4 md:px-6 rounded-md flex gap-3 w-fit">
-                            <p className="font-semibold tracking-custom text-white text-sm md:text-custom">
+                            <p className="uppercase font-semibold tracking-custom text-white text-sm md:text-custom">
                                 PRODUCTS
                             </p>
                             <div className="flex items-center">
@@ -164,7 +164,7 @@ export default function Products() {
                         {/* Call-to-action button */}
                         <div className="w-fit">
                             <button
-                                className="bg-custom-red text-white px-4 md:px-5 py-2 md:py-3 rounded-sm text-sm font-normal tracking-wide cursor-pointer"
+                                className="uppercase bg-custom-red text-white px-4 md:px-5 py-2 md:py-3 rounded-sm text-sm font-normal tracking-wide cursor-pointer"
                                 aria-label="Request a quote for our products"
                                 onClick={() => console.info('[Products] Quote button clicked')}
                             >
