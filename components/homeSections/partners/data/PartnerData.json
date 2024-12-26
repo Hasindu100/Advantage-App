@@ -1,0 +1,22 @@
+{
+    "partners": [
+        {
+            "id": "google-cloud",
+            "name": "Google Cloud Partner",
+            "imagePath": "/images/partners/gcloud.png",
+            "priority": 1
+        },
+        {
+            "id": "impinj",
+            "name": "IMPINJ",
+            "imagePath": "/images/partners/impinj.png",
+            "priority": 2
+        },
+        {
+            "id": "zebra",
+            "name": "ZEBRA",
+            "imagePath": "/images/partners/zebra.png",
+            "priority": 3
+        }
+    ]
+}
