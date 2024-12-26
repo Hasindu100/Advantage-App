@@ -1,0 +1,22 @@
+{
+    "jobListings": [
+        {
+            "code": "PTCA",
+            "title": "Payroll & Tax Compliance Analyst",
+            "type": "Contract",
+            "location": "COLOMBO ( SRI LANKA )"
+        },
+        {
+            "code": "DOE",
+            "title": "DevOps Engineer",
+            "type": "Full Time",
+            "location": "COLOMBO ( SRI LANKA )"
+        },
+        {
+            "code": "SBA",
+            "title": "Senior Business Analyst",
+            "type": "Full Time",
+            "location": "COLOMBO ( SRI LANKA )"
+        }
+    ]
+}

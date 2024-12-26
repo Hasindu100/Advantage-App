@@ -101,7 +101,7 @@ const ContentSection = () => (
     >
         <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-3xl">
             {/* Section label with icon */}
-            <div className="bg-custom-red py-1 px-4 md:px-6 rounded-md flex gap-3 w-fit">
+            <div className="uppercase bg-custom-red py-1 px-4 md:px-6 rounded-md flex gap-3 w-fit">
                 <p className="font-semibold tracking-custom text-white text-xs sm:text-sm md:text-custom">
                     PARTNERS
                 </p>
