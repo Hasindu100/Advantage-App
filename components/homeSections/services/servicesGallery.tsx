@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+
 import servicesData from './data/services.json';
 import { serviceStyles } from './services-config';
 
+// Define the structure for a service card
 interface ServiceCard {
     id: string;
     title: string;
@@ -13,18 +15,24 @@ interface ServiceCard {
     description?: string;
 }
 
+// ServiceCard Component: Displays individual service with image/video and hover effects
 const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
+    // Track video loading and hover states
     const [videoLoaded, setVideoLoaded] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [videoElement, setVideoElement] = useState<HTMLVideoElement | null>(null);
+
+    // Get styles specific to this service type
     const styles = serviceStyles[id as keyof typeof serviceStyles];
 
+    // Load video when video element is ready
     useEffect(() => {
         if (videoElement) {
             videoElement.load();
         }
     }, [videoElement]);
 
+    // Handle mouse enter - start video playback
     const handleMouseEnter = () => {
         setIsHovered(true);
         if (videoElement) {
@@ -37,6 +45,7 @@ const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
         }
     };
 
+    // Handle mouse leave - reset hover state
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
@@ -47,9 +56,12 @@ const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
+            {/* Overlay effect for hover state */}
             <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-50 z-10" />
 
+            {/* Conditional rendering for video or image */}
             {video ? (
+                // Video background with autoplay on hover
                 <video
                     ref={setVideoElement}
                     muted
@@ -64,6 +76,7 @@ const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
                     Your browser does not support the video tag.
                 </video>
             ) : (
+                // Image background with zoom effect on hover
                 <div
                     className="absolute inset-0 transition-transform duration-[7000ms] ease-in-out"
                     style={{
@@ -81,13 +94,14 @@ const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
                 </div>
             )}
 
+            {/* Content overlay with title and description */}
             <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end text-white z-20">
                 {description && (
                     <p className="text-xs sm:text-sm mb-1 sm:mb-2 opacity-90">
                         {description}
                     </p>
                 )}
-                <h3 className={`whitespace-pre-line ${styles.titleClassName || ''} ${styles.titleSize || 'text-xl sm:text-2xl'} ${styles.letterSpacing || ''} ${styles.lineHeight || 'leading-normal'} ${styles.fontWeight || 'font-bold'}`}>
+                <h3 className={`whitespace-pre-line ${'titleClassName' in styles ? styles.titleClassName : ''} ${styles.titleSize || 'text-xl sm:text-2xl'} ${styles.letterSpacing || ''} ${styles.lineHeight || 'leading-normal'} ${styles.fontWeight || 'font-bold'}`}>
                     {title}
                 </h3>
             </div>
@@ -95,13 +109,16 @@ const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
     );
 };
 
+// ServicesGallery Component: Main gallery layout with responsive grid
 export default function ServicesGallery() {
     const services = servicesData.services;
 
     return (
         <div className="container mx-auto p-2 sm:p-4">
+            {/* Desktop Layout: Complex grid with different sized cards */}
             <div className="hidden md:block relative w-full pb-[100%]">
                 <div className="absolute inset-0 flex gap-5">
+                    {/* Left column: 2 equal cards */}
                     <div className="flex-1 flex flex-col gap-5">
                         <div className="flex-1">
                             <ServiceCard {...services[0]} />
@@ -111,6 +128,7 @@ export default function ServicesGallery() {
                         </div>
                     </div>
 
+                    {/* Right section: Complex layout with varying card sizes */}
                     <div className="flex-[3.2] flex flex-col gap-5">
                         <div className="flex-[2.2] flex gap-5">
                             <div className="flex-[2.2] flex flex-col gap-5">
@@ -132,6 +150,7 @@ export default function ServicesGallery() {
                 </div>
             </div>
 
+            {/* Mobile Layout: Simple vertical stack of cards */}
             <div className="md:hidden grid grid-cols-1 gap-5">
                 {services.map((service) => (
                     <div key={service.id} className="relative pb-[100%]">
