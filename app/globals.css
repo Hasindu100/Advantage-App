@@ -6,3 +6,50 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+:root {
+  --primaryColor: #E63D30;
+}
+
+.lineWithDot {
+  float: left;
+  height: 5px;
+  position: relative;
+  width: 70px;
+  margin-top: 10px;
+  background: #fff;
+}
+
+.lineWithDot::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50px;
+  background: #fff;
+  top: -3px;
+  right: -2px;
+}
+
+.lineWithDot::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50px;
+  background: #fff;
+  top: -3px;
+  left: -2px;
+}
+
+.mobileSubMenu {
+  img {
+      filter: invert(100%) hue-rotate(180deg) brightness(5);
+  }
+}
+
+.subMenuCard:hover {
+  img {
+      filter: invert(100%) hue-rotate(180deg) brightness(5);
+  } 
+}

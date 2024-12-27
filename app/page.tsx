@@ -7,6 +7,7 @@ import Partners from '../components/homeSections/partners/partners';
 import PodCasts from '../components/homeSections/podCasts/podCasts';
 import NewsAndUpdates from '../components/homeSections/newsAndUpdates/newsAndUpdates';
 import Careers from '../components/homeSections/careers/careers';
+import ResponsiveNav from '@/components/homeSections/navBar/responsiveNav';
 
 
 export default function Home() {
