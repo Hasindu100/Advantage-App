@@ -33,7 +33,10 @@ const socialIconMap = {
  */
 const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
     <li>
-        <Link href={href} className="text-gray-200 hover:text-red-500 font-medium text-[15px] tracking-wider">
+        <Link
+            href={href}
+            className="text-gray-200 hover:text-red-500 font-medium text-[15px] tracking-wider inline-flex items-center transform transition-transform duration-300 hover:translate-x-2"
+        >
             <FontAwesomeIcon icon={faSquare} className="text-red-500 mr-2 text-xs" />
             {children}
         </Link>
@@ -46,7 +49,10 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
  * Uses Tailwind for styling and FontAwesome for icons
  */
 const SocialLink: React.FC<SocialLinkProps> = ({ href, platform, icon }) => (
-    <Link href={href} className="text-gray-300 hover:text-red-500">
+    <Link
+        href={href}
+        className="text-gray-300 hover:text-red-500 transform transition-transform duration-300 hover:-translate-y-1 inline-block"
+    >
         <span className="sr-only">{platform}</span>
         <FontAwesomeIcon icon={socialIconMap[icon]} className="h-5 w-5" />
     </Link>
@@ -141,9 +147,9 @@ const Footer: React.FC = () => {
                         <div className="text-gray-300 text-sm text-center md:text-right">
                             <div className="mb-2">
                                 © 2024 Zone24x7 Inc -
-                                <Link href="/privacy" className="hover:text-red-500">Privacy</Link>
+                                <Link href="/privacy" className="hover:text-red-500 transition-colors duration-300">Privacy</Link>
                                 <span className="mx-2">|</span>
-                                <Link href="/terms" className="hover:text-red-500">Terms of Use</Link>
+                                <Link href="/terms" className="hover:text-red-500 transition-colors duration-300">Terms of Use</Link>
                             </div>
                             <div className="flex flex-wrap justify-center md:justify-end gap-2 md:gap-0">
                                 {locations.map((location, index) => (
