@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -115,9 +117,9 @@ const Footer: React.FC = () => {
                     {/* Company information section */}
                     <div className="col-span-1 md:col-span-5 lg:col-span-5 flex flex-col items-center md:items-start">
                         <Image
-                            src="/images/logo/logow.png"
-                            alt="Zone24x7"
-                            width={320}
+                            src="/images/logo/logo.png"
+                            alt="NuGenesis Logo"
+                            width={130}
                             height={56}
                             className="md:w-auto w-64"
                         />
@@ -146,7 +148,7 @@ const Footer: React.FC = () => {
                         {/* Copyright and locations */}
                         <div className="text-gray-300 text-sm text-center md:text-right">
                             <div className="mb-2">
-                                © 2024 Zone24x7 Inc -
+                                © 2024 NuGenesis. <span className='mr-2'></span>
                                 <Link href="/privacy" className="hover:text-red-500 transition-colors duration-300">Privacy</Link>
                                 <span className="mx-2">|</span>
                                 <Link href="/terms" className="hover:text-red-500 transition-colors duration-300">Terms of Use</Link>

@@ -1,81 +1,37 @@
 {
-    "companyDescription": "Our sound research and development background means that we are constantly developing leading-edge technology solutions ahead of market needs. Our ability to meld hardware and software solutions places us amongst a handful of companies in the world with the ability to do so. Possessing over a decade of experience in handling over 50+ enterprise customers in a multitude of industries.",
+    "companyDescription": "NuGenesis drives blockchain innovation with advanced research, seamless hardware-software integration, and gasless, carbon-neutral solutions. Backed by years of experience, we deliver cutting-edge systems for enterprise and government clients, redefining industry standards.",
     "pages": [
         {
             "href": "/",
             "text": "Home"
         },
         {
-            "href": "/about",
+            "href": "/",
             "text": "About Us"
         },
         {
-            "href": "/partners",
-            "text": "Partners"
-        },
-        {
-            "href": "/blog",
-            "text": "Blog"
-        },
-        {
-            "href": "/podcast",
-            "text": "Podcast"
-        },
-        {
-            "href": "/careers",
-            "text": "Careers"
-        },
-        {
-            "href": "/contact",
+            "href": "/",
             "text": "Contact Us"
         }
     ],
     "services": [
         {
-            "href": "/services/quality-engineering",
+            "href": "/",
             "text": "Quality Engineering Services"
         },
         {
-            "href": "/services/software-engineering",
+            "href": "/",
             "text": "Software Engineering Solutions"
         },
         {
-            "href": "/services/data-science",
+            "href": "/",
             "text": "Data Science, AI And ML Services"
-        },
-        {
-            "href": "/services/embedded-systems",
-            "text": "Embedded Systems"
-        },
-        {
-            "href": "/services/technology-innovation",
-            "text": "Technology Innovation"
-        },
-        {
-            "href": "/services/iot-iob",
-            "text": "IOT & IOB"
-        },
-        {
-            "href": "/services/warehousing-logistics",
-            "text": "Next-Gen Warehousing & Logistics"
-        },
-        {
-            "href": "/services/devops",
-            "text": "DevOps"
         }
     ],
     "links": [
         {
-            "href": "/privacy",
+            "href": "/",
             "text": "Privacy Policy"
-        },
-        {
-            "href": "/terms",
-            "text": "Terms Of Use"
-        },
-        {
-            "href": "/certification",
-            "text": "ISO/ IEC 27001:2022 Certification"
         }
     ],
     "socialLinks": [

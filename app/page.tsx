@@ -9,18 +9,19 @@ import NewsAndUpdates from '../components/homeSections/newsAndUpdates/newsAndUpd
 import Careers from '../components/homeSections/careers/careers';
 
 
+
 export default function Home() {
   return (
     <main>
       <Hero />
       <Product />
       <Services />
-      <Idea/>
-      <CaseStudies/>  
-      <Partners/>
-      <PodCasts/>
-      <NewsAndUpdates/>
-      <Careers/>
+      <CaseStudies />
+      <Idea />
+      <Partners />
+      <PodCasts />
+      <NewsAndUpdates />
+      <Careers />
     </main>
   );
 }

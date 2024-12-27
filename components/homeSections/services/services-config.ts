@@ -4,7 +4,7 @@
 export const serviceStyles = {
   // Software Engineering: cyan colored text, gets larger on bigger screens
   'software-engineering': {
-    titleClassName: 'text-cyan-300',
+    titleClassName: 'text-custom-blue',
     titleSize: 'text-2xl sm:text-3xl lg:text-4xl',
     letterSpacing: 'tracking-wider',
     lineHeight: 'leading-tight',

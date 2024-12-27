@@ -11,11 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'custom-red': '#E63D30',
+        'custom-red': '#08F',
         'custom-gray': '#FBFBFB',
         'custom-gray-2': '#C5C5C5',
         'custom-gray-3': '#242729',
         'custom-yellow': '#FFC013',
+        'custom-blue': '#08FBF7',
       },
       letterSpacing: {
         'custom': '14px',

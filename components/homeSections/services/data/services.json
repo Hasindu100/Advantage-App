@@ -2,39 +2,39 @@
     "services": [
         {
             "id": "software-engineering",
-            "title": "Software\nEngineering\nSolutions",
+            "title": "NFTCity.\nEchange",
             "image": "/images/services/tl.jpg",
-            "description": "Delivering Enduring Growth With"
+            "description": "The Interactive NFT Platform"
         },
         {
             "id": "tech-innovation",
-            "title": "Technology\nInnovation",
+            "title": "Just Social",
             "image": "/images/services/lb.jpg",
-            "description": "Productivity Improvements With"
+            "description": "The decentralised social media platform that empowers users to realise their value."
         },
         {
             "id": "ai-data",
-            "title": "Artificial Intelligence & Data Science",
+            "title": "The LedgerX Exchange Blockchains",
             "image": "/images/services/tm.jpg",
-            "description": "Omni-channel Personalized Product Recommendations With"
+            "description": "LedgerX is a fiat-crypto exchange driven by open market dynamics."
         },
         {
             "id": "warehousing",
-            "title": "Next Gen\nWarehousing &\nLogistics",
+            "title": "NuCoin",
             "image": "/images/services/m.jpg",
-            "description": "PROFESSIONAL SERVICES"
+            "description": "The NuGenesis Flagship:"
         },
         {
             "id": "embedded",
-            "title": "Embedded\nSystems\nSolutions",
+            "title": "Digital\n Notarised\n Contracts",
             "video": "/images/services/l.mp4",
-            "description": "Streamline With"
+            "description": "Next Generation Smart Contract Digital Notarised Contracts (DNCs)"
         },
         {
             "id": "iot",
-            "title": "IoT & IoB",
+            "title": "TROY",
             "image": "/images/services/b.jpg",
-            "description": "Remote Monitoring With"
+            "description": "Gold-backed token denominated in major currencies"
         }
     ]
 }

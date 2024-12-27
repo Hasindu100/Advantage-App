@@ -5,7 +5,7 @@
  * and internship opportunities. It includes animated job cards, a header with company branding,
  * and a dedicated internship section.
  */
-
+import React from 'react';
 import { useMemo } from 'react';
 import Image from 'next/image';
 import jobListingsData from './data/jobListings.json';
@@ -92,7 +92,7 @@ const JobCard: React.FC<{ job: JobListing; index: number }> = ({ job, index }) =
             <div className="bg-white border border-gray-200 rounded-[5px] transition-all duration-500 group-hover:shadow-lg cursor-pointer h-full">
                 {/* Job details section */}
                 <div className="p-4 sm:p-6">
-                    <div className="text-[11px] sm:text-[12px] font-bold text-white py-1 px-2 sm:px-3 rounded-sm inline-block mb-3 sm:mb-4 transition-colors duration-200 bg-gray-800 group-hover:bg-red-500">
+                    <div className="text-[11px] sm:text-[12px] font-bold text-white py-1 px-2 sm:px-3 rounded-sm inline-block mb-3 sm:mb-4 transition-colors duration-200 bg-gray-800 group-hover:bg-custom-red">
                         {job.code}
                     </div>
                     <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">

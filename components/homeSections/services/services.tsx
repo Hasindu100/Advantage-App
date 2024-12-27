@@ -74,8 +74,8 @@ export default function Services() {
                                 <div className="flex items-center">
                                     <TitleIcon />
                                 </div>
-                                <p className="font-semibold tracking-custom text-white text-sm md:text-custom">
-                                    SERVICES
+                                <p className="uppercase font-semibold tracking-custom text-white text-sm md:text-custom">
+                                    View Projects
                                 </p>
                             </div>
 
@@ -91,7 +91,7 @@ export default function Services() {
                             {/* Description text */}
                             <div className="max-w-2xl w-full tracking-normal text-custom-3 text-gray-500 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xl leading-relaxed text-center">
                                 <p>
-                                    Offering a broad set of capabilities under one roof makes <br /> us a versatile partner to meet all your digital ambitions.
+                                    With global scalability, cross-chain interoperability, and sustainable governance powered by dual AI systems, we deliver end-to-end technology and innovations to accelerate your digital ambitions.
                                 </p>
                             </div>
                         </div>

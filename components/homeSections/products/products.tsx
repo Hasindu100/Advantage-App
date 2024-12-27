@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 
 import ProductsCarousel from "./productsCarousel";
-import TitleIcon from "@/components/homeUiElements/titleIcon";
+import TitleIcon from "../../homeUiElements/titleIcon";
 
 import { motion } from "framer-motion";
 import type { Swiper as SwiperType } from 'swiper';
@@ -107,8 +107,8 @@ export default function Products() {
                                 onClick={handlePrev}
                                 className={`w-4 h-4 rounded-full transition-all duration-300 hover:scale-110
                                     ${activeSlide === 0 || activeSlide === 1
-                                        ? 'bg-red-500 scale-110 shadow-lg'
-                                        : 'bg-gray-300 hover:bg-red-500 border border-gray-500'
+                                    ? 'bg-custom-red scale-110 shadow-lg'
+                                    : 'bg-gray-300 hover:bg-custom-red border border-gray-500'
                                     }`}
                                 aria-label="Previous slide"
                             />
@@ -116,8 +116,8 @@ export default function Products() {
                                 onClick={handleNext}
                                 className={`w-4 h-4 rounded-full transition-all duration-300 hover:scale-110
                                     ${activeSlide === 2 || activeSlide === 3
-                                        ? 'bg-red-500 scale-110 shadow-lg'
-                                        : 'bg-gray-300 hover:bg-red-500 border border-gray-500'
+                                    ? 'bg-custom-red scale-110 shadow-lg'
+                                    : 'bg-gray-300 hover:custom-red border border-gray-500'
                                     }`}
                                 aria-label="Next slide"
                             />
@@ -154,15 +154,12 @@ export default function Products() {
                         {/* Description text */}
                         <div className="max-w-2xl tracking-normal text-custom-3 text-gray-500 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xl leading-relaxed">
                             <p>
-                                Discover a range of top-quality products designed to meet your needs
-                                and exceed your expectations. Whether you&apos;re looking for innovation,
-                                durability, or style, our carefully curated selection offers something
-                                for everyone. Shop now and experience the best in craftsmanship and value.
+                                With unlimited scale and speed, the NuGenesis blockchain infrastructure is the substratum for gasless interactive NFTs, augmented, and virtual reality. The backbone of the metaverse and metarealm. Learn more about our Projects.
                             </p>
                         </div>
 
                         {/* Call-to-action button */}
-                        <div className="w-fit">
+                        {/* <div className="w-fit">
                             <button
                                 className="uppercase bg-custom-red text-white px-4 md:px-5 py-2 md:py-3 rounded-sm text-sm font-normal tracking-wide cursor-pointer"
                                 aria-label="Request a quote for our products"
@@ -170,7 +167,7 @@ export default function Products() {
                             >
                                 GET A QUOTE
                             </button>
-                        </div>
+                        </div> */}
                     </div>
                 </motion.div>
             </div>
