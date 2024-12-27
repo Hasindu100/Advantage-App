@@ -14,6 +14,7 @@ export default {
         'custom-red': '#E63D30',
         'custom-gray': '#FBFBFB',
         'custom-gray-2': '#C5C5C5',
+        'custom-gray-3': '#242729',
         'custom-yellow': '#FFC013',
       },
       letterSpacing: {
