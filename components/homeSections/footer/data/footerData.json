@@ -1,0 +1,113 @@
+{
+    "companyDescription": "Our sound research and development background means that we are constantly developing leading-edge technology solutions ahead of market needs. Our ability to meld hardware and software solutions places us amongst a handful of companies in the world with the ability to do so. Possessing over a decade of experience in handling over 50+ enterprise customers in a multitude of industries.",
+    "pages": [
+        {
+            "href": "/",
+            "text": "Home"
+        },
+        {
+            "href": "/about",
+            "text": "About Us"
+        },
+        {
+            "href": "/partners",
+            "text": "Partners"
+        },
+        {
+            "href": "/blog",
+            "text": "Blog"
+        },
+        {
+            "href": "/podcast",
+            "text": "Podcast"
+        },
+        {
+            "href": "/careers",
+            "text": "Careers"
+        },
+        {
+            "href": "/contact",
+            "text": "Contact Us"
+        }
+    ],
+    "services": [
+        {
+            "href": "/services/quality-engineering",
+            "text": "Quality Engineering Services"
+        },
+        {
+            "href": "/services/software-engineering",
+            "text": "Software Engineering Solutions"
+        },
+        {
+            "href": "/services/data-science",
+            "text": "Data Science, AI And ML Services"
+        },
+        {
+            "href": "/services/embedded-systems",
+            "text": "Embedded Systems"
+        },
+        {
+            "href": "/services/technology-innovation",
+            "text": "Technology Innovation"
+        },
+        {
+            "href": "/services/iot-iob",
+            "text": "IOT & IOB"
+        },
+        {
+            "href": "/services/warehousing-logistics",
+            "text": "Next-Gen Warehousing & Logistics"
+        },
+        {
+            "href": "/services/devops",
+            "text": "DevOps"
+        }
+    ],
+    "links": [
+        {
+            "href": "/privacy",
+            "text": "Privacy Policy"
+        },
+        {
+            "href": "/terms",
+            "text": "Terms Of Use"
+        },
+        {
+            "href": "/certification",
+            "text": "ISO/ IEC 27001:2022 Certification"
+        }
+    ],
+    "socialLinks": [
+        {
+            "href": "https://facebook.com",
+            "platform": "Facebook",
+            "icon": "faFacebookF"
+        },
+        {
+            "href": "https://linkedin.com",
+            "platform": "LinkedIn",
+            "icon": "faLinkedinIn"
+        },
+        {
+            "href": "https://youtube.com",
+            "platform": "YouTube",
+            "icon": "faYoutube"
+        },
+        {
+            "href": "https://instagram.com",
+            "platform": "Instagram",
+            "icon": "faInstagram"
+        },
+        {
+            "href": "https://twitter.com",
+            "platform": "Twitter",
+            "icon": "faTwitter"
+        }
+    ],
+    "locations": [
+        "USA",
+        "Sri Lanka",
+        "UK"
+    ]
+}
