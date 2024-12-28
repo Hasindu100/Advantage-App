@@ -12,7 +12,6 @@ import { HiBars3BottomRight } from 'react-icons/hi2';
 import { navLinks } from './data';
 import NavSubMenu from './navSubMenu';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa';
 

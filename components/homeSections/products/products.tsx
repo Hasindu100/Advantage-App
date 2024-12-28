@@ -30,7 +30,7 @@ export default function Products() {
         return () => {
             console.info('[Products] Component unmounting, cleaning up...');
         };
-    }, []);
+    }, [activeSlide]);
 
     /**
      * Animation variants for content section

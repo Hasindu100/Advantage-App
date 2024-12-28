@@ -1,40 +1,24 @@
 'use client'
 
 import TitleIcon from "../../homeUiElements/titleIcon";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-interface ContentVariants {
+const contentVariants: Variants = {
     hidden: {
-        x: number;
-        opacity: number;
-    };
+        x: -100,
+        opacity: 0
+    },
     visible: {
-        x: number;
-        opacity: number;
+        x: 0,
+        opacity: 1,
         transition: {
-            duration: number;
-            ease: string;
-        };
-    };
-}
+            duration: 0.8,
+            ease: "easeOut"
+        }
+    }
+};
 
 export default function Community() {
-
-    const contentVariants: ContentVariants = {
-        hidden: {
-            x: -100,
-            opacity: 0
-        },
-        visible: {
-            x: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
-        }
-    };
-
     return (
         <div className="w-full flex flex-col justify-center items-center">
             <div className="relative w-full overflow-hidden">
@@ -60,8 +44,6 @@ export default function Community() {
                                     Community Participation
                                 </h1>
                             </div>
-
-
                         </div>
                     </motion.div>
                 </div>
@@ -77,13 +59,11 @@ export default function Community() {
                             variants={contentVariants}
                         >
                             <div className="relative pt-8">
-                                {/* Floating title above video frame */}
                                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10 pt-2">
                                     <h2 className="text-gray-600 text-md md:text-base whitespace-nowrap text-center bg-gray-50 px-6 py-2 mt-5">
                                         Adoption Participation Program
                                     </h2>
                                 </div>
-                                {/* YouTube video frame */}
                                 <div className="border-[3px] border-custom-red rounded-[3px] p-4 md:p-8">
                                     <div className="relative w-full overflow-hidden" style={{ paddingTop: '56.25%' }}>
                                         <iframe
@@ -103,11 +83,8 @@ export default function Community() {
             <div className="max-w-2xl w-full tracking-wide text-[16px] text-gray-500 xs:text-lg sm:text-xl md:text-2xl lg:text-xl leading-relaxed text-center sm:text-md mt-12">
                 <p>
                     Do you want to get involved and make your mark? <br />
-
                     Do you want to become a part of the NuGenesis community?<br />
-
                     Want to make a career, profession, or business in the new economy?<br />
-
                     Check out the opportunities in the NuGenesis ecosystem here:
                 </p>
             </div>

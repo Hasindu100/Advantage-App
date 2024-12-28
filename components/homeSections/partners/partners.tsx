@@ -9,22 +9,10 @@
  * 2. A logo display section showing partner company logos in a grid
  */
 
-import Image from "next/image";
+
 import TitleIcon from "../../homeUiElements/titleIcon";
 import { motion } from "framer-motion";
-import partnerData from './data/PartnerData.json';
 
-// Type definitions for partner data structure
-interface Partner {
-    id: string;         // Unique identifier for each partner
-    name: string;       // Partner company name
-    imagePath: string;  // Path to partner logo image
-    priority: number;   // Display priority/order for the partner
-}
-
-interface PartnerData {
-    partners: Partner[];  // Array of partner objects
-}
 
 /**
  * Animation configuration for content transitions
@@ -53,16 +41,7 @@ const ANIMATION_VARIANTS = {
  * Configuration for partner logo image dimensions
  * Provides two size presets: standard and small
  */
-const IMAGE_DIMENSIONS = {
-    standard: {
-        width: 320,
-        height: 320
-    },
-    small: {
-        width: 120,
-        height: 120
-    }
-};
+
 
 /**
  * PartnerLogo Component
@@ -70,22 +49,6 @@ const IMAGE_DIMENSIONS = {
  * 
  * @param partner - Partner object containing logo information
  */
-const PartnerLogo = ({ partner }: { partner: Partner }) => {
-    // Special handling for 'zebra' partner with smaller dimensions
-    const dimensions = partner.id === 'zebra' ? IMAGE_DIMENSIONS.small : IMAGE_DIMENSIONS.standard;
-
-    return (
-        <div className="w-48 h-24 flex items-center justify-center">
-            <Image
-                src={partner.imagePath}
-                alt={partner.name}
-                className="max-w-full max-h-full p-4"
-                {...dimensions}
-                loading="lazy"
-            />
-        </div>
-    );
-};
 
 /**
  * ContentSection Component
@@ -145,10 +108,6 @@ const ContentSection = () => (
  */
 export default function Partners() {
     // Sort partners by priority for consistent display order
-    const typedPartnerData = partnerData as PartnerData;
-    const sortedPartners = typedPartnerData.partners.sort((currentPartner, nextPartner) =>
-        currentPartner.priority - nextPartner.priority
-    );
 
     return (
         <div className="w-full py-8 sm:py-12 md:py-8 lg:py-10 p-2">

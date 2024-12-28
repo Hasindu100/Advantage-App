@@ -1,7 +1,6 @@
 "use client"
 import { subNavMenu } from '@/components/homeSections/navBar/data';
-import { useState } from 'react';
-import { MdRocketLaunch } from 'react-icons/md';
+import Image from 'next/image';
 
 
 type Props = {
@@ -19,7 +18,7 @@ const Menu = ({isOpen}: Props) => {
                         <div key={menu.id}>
                             <div className='mobileSubMenu flex px-2 py-2'>
                                 <div className="flex-none mx-auto my-auto w-12 relative">
-                                    <img src={menu.image} alt="" width={80} height={80} className="relative inset-0 w-8 h-8 object-cover text-orange-600 " loading="lazy" />
+                                    <Image src={menu.image} alt="" width={80} height={80} className="relative inset-0 w-8 h-8 object-cover text-orange-600 " loading="lazy" />
                                     {/* <MdRocketLaunch className="absolute inset-0 w-8 h-full object-cover text-orange-600" /> */}
                                 </div>
                                 <div className="flex-auto pl-2">

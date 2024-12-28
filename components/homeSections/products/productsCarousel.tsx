@@ -10,7 +10,7 @@ import 'swiper/css';
 import { products } from './data/productsData';
 import { Product } from './types';
 
-const ProductCard: React.FC<Product> = ({ title, src, alt, description, imageConfig }) => {
+const ProductCard: React.FC<Product> = ({ title, src, alt, description }) => {
     return (
         <div className="flex flex-col h-[560px] w-full bg-white rounded-[4px] border-[1px] border-gray-200 hover:border-custom-red transition duration-700 ease-in-out">
             {/* Title section with fixed height */}

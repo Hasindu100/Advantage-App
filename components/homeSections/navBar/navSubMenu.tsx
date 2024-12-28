@@ -7,6 +7,7 @@
 
 import React from 'react'
 import { subNavMenu } from './data'
+import Image from 'next/image'
 
 const NavSubMenu = () => {
   return (
@@ -20,7 +21,7 @@ const NavSubMenu = () => {
                             <div key={menu.id}>
                                 <div className="subMenuCard flex font-sans group/card h-full px-2 py-2 rounded hover:bg-custom-red cursor-pointer">
                                     <div className="flex-none mx-auto my-auto justify-center items-center w-12">
-                                        <img src={menu.image} alt="" width={80} height={80} className="relative inset-0 w-8 h-8 object-cover text-orange-600 " loading="lazy" />
+                                        <Image src={menu.image} alt="" width={80} height={80} className="relative inset-0 w-8 h-8 object-cover text-orange-600 " loading="lazy" />
                                     </div>
                                     <div className="flex-auto pl-2">
                                         <div className="flex flex-wrap">

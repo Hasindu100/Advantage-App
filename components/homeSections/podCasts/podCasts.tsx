@@ -41,11 +41,11 @@ const PodcastCard: React.FC<Podcast> = ({ imageUrl, link, title }) => {
 };
 
 export default function PodCase() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [swiper, setSwiper] = useState<SwiperType | null>(null);
- 
+
     const { podcasts } = podcastData;
 
-    
     return (
         <div className="min-h-screen bg-gray-900 flex items-center justify-center mt-12">
             <div className="w-full max-w-6xl px-4">
@@ -53,7 +53,7 @@ export default function PodCase() {
                     modules={[Autoplay, Navigation, Pagination, EffectCoverflow]}
                     spaceBetween={50}
                     slidesPerView={1}
-                    onSwiper={setSwiper}
+                    onSwiper={(swiper) => setSwiper(swiper)}
                     autoplay={{
                         delay: 4000,
                         disableOnInteraction: false,
@@ -81,7 +81,7 @@ export default function PodCase() {
                 >
                     {podcasts.map((podcast) => (
                         <SwiperSlide key={podcast.id} className="flex items-center justify-center">
-                            <PodcastCard {...podcast} />
+                            <PodcastCard title={''} description={''} {...podcast} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

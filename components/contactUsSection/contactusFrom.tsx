@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
@@ -181,7 +181,7 @@ const ContactUsForm: React.FC = () => {
 
     const getInputClassName = (fieldName: string) => {
         const baseClasses = "w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500";
-        const errorClasses = touched[fieldName] && errors[fieldName]
+        const errorClasses = touched[fieldName] && errors[fieldName as keyof FormErrors]
             ? "border-red-500 bg-red-50 focus:border-red-500 focus:ring-red-500"
             : "border-gray-300 focus:border-blue-500";
         return `${baseClasses} ${errorClasses}`;
@@ -193,7 +193,7 @@ const ContactUsForm: React.FC = () => {
 
             {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-                    Thank you for your submission! We'll get back to you soon.
+                    Thank you for your submission! We&apos;ll get back to you soon.
                 </div>
             )}
 

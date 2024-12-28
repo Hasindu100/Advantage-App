@@ -53,6 +53,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
 const SocialLink: React.FC<SocialLinkProps> = ({ href, platform, icon }) => (
     <Link
         href={href}
+        target='_blank'
         className="text-gray-300 hover:text-custom-blue transform transition-transform duration-300 hover:-translate-y-1 inline-block"
     >
         <span className="sr-only">{platform}</span>
