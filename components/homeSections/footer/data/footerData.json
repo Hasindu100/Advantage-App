@@ -49,29 +49,29 @@
     ],
     "socialLinks": [
         {
-            "href": "https://facebook.com",
+            "href": "https://web.facebook.com/nutechcity",
             "platform": "Facebook",
             "icon": "faFacebookF"
         },
         {
-            "href": "https://linkedin.com",
+            "href": "https://www.linkedin.com/company/nugenesis",
             "platform": "LinkedIn",
             "icon": "faLinkedinIn"
         },
         {
-            "href": "https://youtube.com",
+            "href": "https://www.youtube.com/@NuGenesis",
             "platform": "YouTube",
             "icon": "faYoutube"
         },
         {
-            "href": "https://instagram.com",
+            "href": "https://www.instagram.com/nugenesis.ou",
             "platform": "Instagram",
             "icon": "faInstagram"
         },
         {
-            "href": "https://twitter.com",
-            "platform": "Twitter",
-            "icon": "faTwitter"
+            "href": "https://x.com/nugenesisou",
+            "platform": "X",
+            "icon": "faXTwitter"
         }
     ],
     "locations": [

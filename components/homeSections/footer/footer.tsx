@@ -14,7 +14,7 @@ import {
     faLinkedinIn,
     faYoutube,
     faInstagram,
-    faTwitter
+    faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
 /**
@@ -25,7 +25,7 @@ const socialIconMap = {
     faLinkedinIn,
     faYoutube,
     faInstagram,
-    faTwitter
+    faXTwitter
 };
 
 /**

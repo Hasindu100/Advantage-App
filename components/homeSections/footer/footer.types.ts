@@ -7,7 +7,7 @@ export type SocialIconType =
   | 'faLinkedinIn' 
   | 'faYoutube' 
   | 'faInstagram' 
-  | 'faTwitter';
+  | 'faXTwitter';
 
 /**
  * Props interface for footer link components
