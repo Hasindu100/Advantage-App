@@ -14,6 +14,7 @@ import NavSubMenu from './navSubMenu';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { usePathname } from 'next/navigation';
+import { FaCaretDown, FaCaretUp } from 'react-icons/fa';
 
 type Props = {
     openNav:()=>void
@@ -50,10 +51,14 @@ const NavBar = ({openNav}:Props) => {
                 {navLinks.map((link) => {
                     return (
                         <div key={link.id} className={`${link.id == 5 ? "group" : "" } relative`}>
-                            <Link href={link.url}>
+                            <Link href={link.url} className='flex'>
                                 <p className="relative text-white text-base font-medium w-fit block after:block after:content-[''] after:absolute after:h-[3px]
                                 after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition duration-300 after:origin-right">{link.label}</p>
+                                
+                                {/* Add caret icon for about us */}
+                                {link.id == 5 ? <div className='text-white my-auto ml-2'><FaCaretDown className='hidden group-hover:block' /> <FaCaretUp className='group-hover:hidden' /></div>: ''}
                             </Link>
+                            
                             {/* about us sub menu list */}
                             <div className='opacity-0 group-hover:opacity-100 hidden group-hover:block'>
                                 <NavSubMenu />
