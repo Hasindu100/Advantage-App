@@ -14,7 +14,7 @@ export default function About() {
 
 
     return (
-        <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-50/85 to-indigo-50 pb-10">
+        <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-100 pb-10">
             <motion.div style={{ opacity }}>
                 <HeroSection scale={scale} />
                 <MainFeaturesSection />

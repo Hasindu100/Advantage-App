@@ -45,7 +45,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scale }) => {
                     </div>
                 </motion.h1>
                 <motion.p
-                    className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed" // Responsive text size
+                    className="text-lg sm:text-xl md:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed" // Responsive text size
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3 }}
