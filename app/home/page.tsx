@@ -9,13 +9,15 @@ import Careers from '../../components/homeSections/careers/careers';
 import Community from '../../components/homeSections/community/community';
 import CTO from '../../components/homeSections/cto/cto';
 import CEO from '../../components/homeSections/ceo/ceo';
+import Introduction from '@/components/homeSections/introduction/introduction';
 
 const commonClasses = "px-2 sm:px-4 md:px-8 lg:px-16 xl:px-28 max-w-full";
 
 const sections = [
+  { id: 'introduction', component: <Introduction /> },
+  { id: 'caseStudies', component: <CaseStudies /> },
   { id: 'product', component: <Product /> },
   { id: 'services', component: <Services /> },
-  { id: 'caseStudies', component: <CaseStudies /> },
   { id: 'partners', component: <Partners /> },
   { id: 'community', component: <Community /> },
 ];
@@ -26,7 +28,7 @@ export default function HomePage() {
 
     return (
         <main>
-            <div className={commonClasses}>
+            <div>
                 <Hero />
             </div>
 

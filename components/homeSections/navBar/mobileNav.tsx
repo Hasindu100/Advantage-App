@@ -31,13 +31,13 @@ const MobileNav = ({closeNav,showNav}: Props) => {
     <>
     <div className={`fixed ${navOpen} inset-0 transform transision-all duration-500 z-[1002] bg-black opacity-70 w-full h-screen`}></div>
     <div className={`text-white ${navOpen} fixed justify-center flex flex-col pt-10 h-full transform transition-all duration-500
-     delay-300 w-[80%] sm:w-[60%] bg-rose-900 space-y-6 z-[1050]`}>
+     delay-300 w-[80%] sm:w-[60%] bg-cyan-950 space-y-6 z-[1050]`}>
       <div className='h-[calc(100vh_-_90px)] overflow-y-auto mt-[90px]'>
         {navLinks.map((link) => {
             return (
               <div key={link.id} className='w-full px-5 py-0'>
                 {/* Nav menu */}
-                {link.label != "Services" &&
+                {link.id != 5 &&
                   <Link href={link.url}>
                     <p className='text-white w-fit text-[20px] 
                      border-white sm:text-[30px] leading-[52px]'>{link.label}</p>
@@ -45,7 +45,7 @@ const MobileNav = ({closeNav,showNav}: Props) => {
                   </Link>
                 }
                 {/* Services sub menu */}
-                {link.label == "Services" && (
+                {link.id == 5 && (
                   <div onClick={toggleMenu}>
                     <div className='flex justify-between items-center mr-4'>
                       <p className='text-white w-fit text-[20px]
