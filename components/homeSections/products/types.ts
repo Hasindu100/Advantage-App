@@ -16,5 +16,4 @@ export interface Product {
     src: string;
     alt: string;
     description: string;
-    imageConfig: ImageConfig;
 }

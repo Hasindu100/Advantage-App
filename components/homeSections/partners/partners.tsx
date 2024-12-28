@@ -103,7 +103,7 @@ const ContentSection = () => (
             {/* Section label with icon */}
             <div className="uppercase bg-custom-red py-1 px-4 md:px-6 rounded-md flex gap-3 w-fit">
                 <p className="font-semibold tracking-custom text-white text-xs sm:text-sm md:text-custom">
-                    PARTNERS
+                    Media
                 </p>
                 <div className="flex items-left">
                     <TitleIcon />
@@ -113,19 +113,19 @@ const ContentSection = () => (
             {/* Main heading */}
             <div className="w-full">
                 <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl tracking-custom-2 font-extrabold">
-                    Partner With Us
+                    NuGenesis Metaverse Backbone
                 </h1>
             </div>
 
             {/* Description text */}
             <div className="max-w-2xl w-full tracking-normal text-gray-500 md:text-lg text-[18px] lg:text-xl leading-relaxed">
                 <p>
-                    We work with some of the world&apos;s leading technology providers. Join us today and leverage our expertise to improve your business or sales objectives.
+                    With unlimited scale and speed, the NuGenesis blockchain infrastructure is the substratum for gasless interactive NFTs, augmented, and virtual reality. The backbone of the metaverse and metarealm.
                 </p>
             </div>
 
             {/* Call-to-action button */}
-            <div className="w-fit">
+            {/* <div className="w-fit">
                 <button
                     className="bg-gray-800 text-white font-bold tracking-wide px-5 md:px-6 py-3 md:py-4 rounded-[3px] text-xs sm:text-sm cursor-pointer hover:bg-custom-red hover:text-white transition-colors duration-700 ease-in-out"
                     aria-label="Request a quote for our products"
@@ -133,7 +133,7 @@ const ContentSection = () => (
                 >
                     Join Us
                 </button>
-            </div>
+            </div> */}
         </div>
     </motion.div>
 );
@@ -151,9 +151,9 @@ export default function Partners() {
     );
 
     return (
-        <div className="w-full py-8 sm:py-12 md:py-16 lg:py-20 p-2">
+        <div className="w-full py-8 sm:py-12 md:py-8 lg:py-10 p-2">
             <div className="relative">
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-2 min-h-[300px]">
+                <div className="flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-5 min-h-[300px]">
                     {/* Left side content section */}
                     <ContentSection />
 
@@ -165,21 +165,22 @@ export default function Partners() {
                         variants={ANIMATION_VARIANTS.image}
                     >
                         <div className="relative pt-8">
-                            {/* Floating title above partner logos */}
+                            {/* Floating title above video frame */}
                             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                                 <h2 className="text-gray-600 text-md md:text-base whitespace-nowrap text-center bg-gray-50 px-6 py-2 mt-5">
-                                    Working with the World&apos;s Leading <br /> Technology Providers
+                                    NuGenesis - 2022 & Beyond!
                                 </h2>
                             </div>
-                            {/* Partner logos grid container */}
-                            <div className="border-[3px] border-custom-red rounded-[3px] p-8">
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
-                                    {sortedPartners.map((partner) => (
-                                        <PartnerLogo
-                                            key={partner.id}
-                                            partner={partner}
-                                        />
-                                    ))}
+                            {/* YouTube video frame */}
+                            <div className="border-[3px] border-custom-red rounded-[3px] p-4 md:p-8">
+                                <div className="relative w-full overflow-hidden" style={{ paddingTop: '56.25%' }}>
+                                    <iframe
+                                        className="absolute top-0 left-0 w-full h-full border-0"
+                                        src="https://www.youtube.com/embed/_K5JB5ZNoeA?si=8uEqoZZvVrSZ1J5c"
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    ></iframe>
                                 </div>
                             </div>
                         </div>

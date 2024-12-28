@@ -1,3 +1,4 @@
+import HomePage from './home/page';
 import Hero from '../components/homeSections/hero/hero';
 import Product from '../components/homeSections/products/products';
 import Services from '../components/homeSections/services/services';
@@ -9,19 +10,10 @@ import NewsAndUpdates from '../components/homeSections/newsAndUpdates/newsAndUpd
 import Careers from '../components/homeSections/careers/careers';
 import ResponsiveNav from '@/components/homeSections/navBar/responsiveNav';
 
-
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Product />
-      <Services />
-      <Idea/>
-      <CaseStudies/>  
-      <Partners/>
-      <PodCasts/>
-      <NewsAndUpdates/>
-      <Careers/>
+      <HomePage />
     </main>
   );
 }

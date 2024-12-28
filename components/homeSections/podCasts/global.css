@@ -1,0 +1,8 @@
+.swiper-slide-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px;
+}
+
+.swiper-slide-custom img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
