@@ -1,36 +1,36 @@
 {
-    "companyDescription": "NuGenesis drives blockchain innovation with advanced research, seamless hardware-software integration, and gasless, carbon-neutral solutions. Backed by years of experience, we deliver cutting-edge systems for enterprise and government clients, redefining industry standards.",
+    "companyDescription": "...",
     "pages": [
         {
-            "href": "/",
+            "href": "/home",
             "text": "Home"
         },
         {
-            "href": "/",
+            "href": "/about-us",
             "text": "About Us"
         },
         {
-            "href": "/",
+            "href": "/contact-us",
             "text": "Contact Us"
         }
     ],
     "services": [
         {
-            "href": "/",
+            "href": "/services/quality-engineering",
             "text": "Quality Engineering Services"
         },
         {
-            "href": "/",
+            "href": "/services/software-engineering",
             "text": "Software Engineering Solutions"
         },
         {
-            "href": "/",
+            "href": "/services/data-science-ai-ml",
             "text": "Data Science, AI And ML Services"
         }
     ],
     "links": [
         {
-            "href": "/",
+            "href": "/privacy-policy",
             "text": "Privacy Policy"
         }
     ],

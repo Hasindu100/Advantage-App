@@ -77,12 +77,13 @@ const ServiceCard = ({ id, title, image, video, description }: ServiceCard) => {
                 </video>
             ) : (
                 // Image background with zoom effect on hover
-                <div
-                    className="absolute inset-0 transition-transform duration-[7000ms] ease-in-out"
-                    style={{
-                        transform: isHovered ? 'scale(1.5) rotate(10deg)' : 'scale(1) rotate(0deg)'
-                    }}
-                >
+                    <div
+                        className="absolute inset-0 transition-transform ease-in-out"
+                        style={{
+                            transform: isHovered ? 'scale(1.5) rotate(10deg)' : 'scale(1) rotate(0deg)',
+                            transitionDuration: '5000ms',
+                        }}
+                    >
                     <Image
                         src={image || ''}
                         alt={title}

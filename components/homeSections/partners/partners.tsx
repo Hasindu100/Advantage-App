@@ -151,7 +151,7 @@ export default function Partners() {
     );
 
     return (
-        <div className="w-full py-8 sm:py-12 md:py-16 lg:py-20 p-2">
+        <div className="w-full py-8 sm:py-12 md:py-8 lg:py-10 p-2">
             <div className="relative">
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-5 min-h-[300px]">
                     {/* Left side content section */}

@@ -1,0 +1,29 @@
+{
+  "podcasts": [
+    {
+      "id": "1",
+      "imageUrl": "/images/podcasts/senatorsprogram.jpg",
+      "link": "https://youtu.be/LNuesj6LeRc?si=UKIT24XkTjXrMuwT"
+    },
+    {
+      "id": "2",
+      "imageUrl": "/images/podcasts/marketconsulprogram.jpg",
+      "link": "https://youtu.be/KIlkhmxTi5M?si=poTYNVTme_EVMuiI"
+    },
+    {
+      "id": "3",
+      "imageUrl": "/images/podcasts/networkconcordatprogram.jpg",
+      "link": "https://youtu.be/D0WFAAlEGOs?si=KgMMvTpWtlIJR_17"
+    },
+    {
+      "id": "4",
+      "imageUrl": "/images/podcasts/diplomatprogram.jpg",
+      "link": "https://youtu.be/plMKga9xAqE?si=VgvKq-fav-jJe2oI"
+    },
+    {
+      "id": "5",
+      "imageUrl": "/images/podcasts/ambassadorprogram.jpg",
+      "link": "https://youtu.be/gffjTUdgfDI?si=P4MY5r5N7c9zhMGT"
+    }
+  ]
+}

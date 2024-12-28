@@ -30,13 +30,16 @@ export default function RootLayout({
       <body className="bg-gray-50 min-h-screen overflow-x-hidden">
         <div className="px-2 sm:px-4 md:px-8 lg:px-16 xl:px-28 max-w-full">
           <NavBar />
-          <main className="w-full">
-            {children}
-          </main>
         </div>
+        
+        <main className="w-full">
+          {children}
+        </main>
+
         <div className="mt-12">
           <Footer />
         </div>
+
       </body>
     </html>
   );
