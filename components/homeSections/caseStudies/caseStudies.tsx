@@ -13,24 +13,32 @@ import { caseStudiesList } from './data'
 
 const CaseStudies = () => {
   return (
-    <div className='pt-16 flex items-center justify-center flex-col bg-white'>
+    <div className='pt-16 flex items-center justify-center flex-col'>
         {/* 1st section with image and case study details */}
         <div className='grid grid-cols-1 md:grid-cols-2 w-full'>
             {/* image */}
             <div className='flex justify-start w-full'>
-                <Image src="./images/caseStudy/our-work.svg" alt="ourwork" width={300} height={300} className='h-auto' />
+                <Image src="/images/caseStudy/about.png" alt="ourwork" width={500} height={300} className='h-auto' />
             </div>
             {/* details section */}
-            <div className='flex items-center justify-end mx-auto w-full'>
-                <div className='max-w-[400px]'>
-                    <div className='px-6 py-1 mt-[100px] bg-[--primaryColor] h-auto rounded-md w-fit md:w-full float-right md:float-none'>
-                        <div className='lineWithDot hidden lg:block mr-[30px]'></div>
-                        <p className='font-base text-sm lg:text-base uppercase font-semibold text-white tracking-[0.5rem]'>Case Studies</p>
+            <div className='flex items-center justify-end mx-auto w-[80%] md:w-full'>
+                <div className=''>
+                    <div className='flex justify-center items-center px-6 py-1 bg-[--primaryColor] h-auto rounded-md w-fit md:w-fit md:float-none'>
+                        <div className='lineWithDot mr-[30px] mt-0'></div>
+                        <p className='font-base text-sm lg:text-base uppercase font-semibold text-white tracking-[0.5rem]'>About NuGenesis</p>
                     </div>
-                    <div className='float-right text-end mt-[20px]'>
-                        <h1 className='text-[30px] font-extrabold mb-[8px] text-gray-700'>Our Work</h1>
-                        <p className='float-right mb-[16px] text-gray-500'>We inspire our clients by offering a
-                        hands-on approach to the implementation of disruptive technology and innovation solutions.</p>
+                    <div className='float-left text-start mt-[20px]'>
+                        <div className='float-left mb-[16px] text-gray-500 space-y-5'>
+                            <p>
+                                NuGenesis is system of blockchain technologies to reap the potential in the mass adoption of the crypto market. It integrates blockchain load balancers and system validators to efficiently flow data into infinite parallel processing blockchains. The more users, the faster the transaction speed!
+                            </p>
+                            <p>
+                                NuGenesis parallel processing blockchains are multilingual cross chains allowing dApps built on Eth, Substrate, Bitcoin and 29 other language systems to be seamlessly interoperable.
+                            </p>
+                            <p>
+                                NuGenesis blockchain network configurations are complete and functional, and in-built in the code to constantly improve and innovate. It is entirely gasless. It is zero-carbon emission, and totally Green.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

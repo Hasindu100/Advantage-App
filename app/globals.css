@@ -8,7 +8,7 @@ body {
 }
 
 :root {
-  --primaryColor: #E63D30;
+  --primaryColor: #0088ff;
 }
 
 .lineWithDot {
@@ -16,7 +16,6 @@ body {
   height: 5px;
   position: relative;
   width: 70px;
-  margin-top: 10px;
   background: #fff;
 }
 

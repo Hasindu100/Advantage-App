@@ -11,12 +11,17 @@ import React, { useEffect, useState } from 'react'
 import { HiBars3BottomRight } from 'react-icons/hi2';
 import { navLinks } from './data';
 import NavSubMenu from './navSubMenu';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 type Props = {
     openNav:()=>void
 }
 
 const NavBar = ({openNav}:Props) => {
+    const pathname = usePathname(); // get current path name
+
     const [navBg, setNavBg] = useState(false); // identifier for change navbar background color when scrolling
 
     // set navBg value when scrolling
@@ -30,20 +35,26 @@ const NavBar = ({openNav}:Props) => {
     }, []);
 
   return (
-    <div className={`${navBg ? "bg-rose-900 shadow-md" : "fixed"} transition-all duration-200 h-[80px] z-[1000] fixed w-full border-b-[1px] border-b-gray-600`}>
+    <div className={`${pathname != '/home' ? 'bg-cyan-950' : navBg ? "bg-cyan-950 shadow-md" : "fixed"} transition-all duration-200 h-[80px] z-[1000] fixed w-full border-b-[1px] border-b-gray-600`}>
         <div className='flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto'>
-            <div className='flex items-center space-x-2'>
-                <h1 className='text-xl md:text-2xl text-white uppercase font-bold'>Advantage</h1>
-            </div>
+            {/* logo */}
+            <Link href="/home" className='flex items-center space-x-2'>
+                <Image 
+                    src="/images/logo/logo.png" 
+                    alt="logo" 
+                    width={100}
+                    height={50} />
+            </Link>
+            {/* Navigation menu */}
             <div className='hidden lg:flex items-center space-x-10'>
                 {navLinks.map((link) => {
                     return (
-                        <div key={link.id} className={`${link.label == "Services" ? "group" : "" } relative`}>
+                        <div key={link.id} className={`${link.id == 5 ? "group" : "" } relative`}>
                             <Link href={link.url}>
                                 <p className="relative text-white text-base font-medium w-fit block after:block after:content-[''] after:absolute after:h-[3px]
                                 after:bg-yellow-300 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition duration-300 after:origin-right">{link.label}</p>
                             </Link>
-                            {/* services sub menu list */}
+                            {/* about us sub menu list */}
                             <div className='opacity-0 group-hover:opacity-100 hidden group-hover:block'>
                                 <NavSubMenu />
                             </div>
@@ -51,6 +62,11 @@ const NavBar = ({openNav}:Props) => {
                         </div>
                     )
                 })}
+            </div>
+            <div className='flex items-center space-x-4'>
+                <Link href="/contact-us" className='md:px-6 md-py-2.5 px-4 py-2 text-white text-sm lg:text-base font-semibold bg-[#DB9632] 
+                 hover:bg-orange-400 transition-all duration-200 rounded'>Contact Us</Link>
+                 <HiBars3BottomRight onClick={openNav} className='w-8 h-8 cursor-pointer text-white lg:hidden' />
             </div>
         </div>
     </div>
