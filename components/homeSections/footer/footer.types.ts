@@ -46,7 +46,6 @@ export interface FooterSectionProps {
 
 /**
  * Interface defining the structure of footer data
- * @property companyDescription - Text description of the company
  * @property pages - Array of internal page links
  * @property services - Array of service page links
  * @property links - Array of additional links
@@ -54,7 +53,6 @@ export interface FooterSectionProps {
  * @property locations - Array of company location strings
  */
 export interface FooterData {
-    companyDescription: string;
     pages: Array<{
         href: string;
         text: string;

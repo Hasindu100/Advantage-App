@@ -37,9 +37,9 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
     <li>
         <Link
             href={href}
-            className="text-gray-200 hover:text-red-500 font-medium text-[15px] tracking-wider inline-flex items-center transform transition-transform duration-300 hover:translate-x-2"
+            className="text-gray-200 hover:text-custom-blue font-medium text-[15px] tracking-wider inline-flex items-center transform transition-transform duration-300 hover:translate-x-2"
         >
-            <FontAwesomeIcon icon={faSquare} className="text-red-500 mr-2 text-xs" />
+            <FontAwesomeIcon icon={faSquare} className="text-custom-blue mr-2 text-xs" />
             {children}
         </Link>
     </li>
@@ -53,7 +53,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
 const SocialLink: React.FC<SocialLinkProps> = ({ href, platform, icon }) => (
     <Link
         href={href}
-        className="text-gray-300 hover:text-red-500 transform transition-transform duration-300 hover:-translate-y-1 inline-block"
+        className="text-gray-300 hover:text-custom-blue transform transition-transform duration-300 hover:-translate-y-1 inline-block"
     >
         <span className="sr-only">{platform}</span>
         <FontAwesomeIcon icon={socialIconMap[icon]} className="h-5 w-5" />
@@ -80,8 +80,8 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, links }) => {
                 {remainingLetters}
             </h3>
             <ul className="space-y-4">
-                {links.map(({ href, text }) => (
-                    <FooterLink key={href} href={href}>{text}</FooterLink>
+                {links.map(({ href, text }) => ( // Changed key here to the combination of href and text
+                    <FooterLink key={`${href}-${text}`} href={href}>{text}</FooterLink>
                 ))}
             </ul>
         </div>
@@ -100,7 +100,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, links }) => {
  */
 const Footer: React.FC = () => {
     const {
-        companyDescription,
+
         pages,
         services,
         links,
@@ -109,22 +109,27 @@ const Footer: React.FC = () => {
     } = footerData as FooterData;
 
     return (
-        <footer className="bg-custom-gray-3 text-white py-12 w-full">
+        <footer className="bg-custom-gray-3 text-white py-12 w-full ">
             {/* Main footer container with responsive padding */}
             <div className="container mx-auto px-4 md:px-8 lg:px-28">
                 {/* Grid layout for footer sections */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
                     {/* Company information section */}
                     <div className="col-span-1 md:col-span-5 lg:col-span-5 flex flex-col items-center md:items-start">
-                        <Image
-                            src="/images/logo/logo.png"
-                            alt="NuGenesis Logo"
-                            width={130}
-                            height={56}
-                            className="md:w-auto w-64"
-                        />
+                        <Link
+                            href="/home"
+                        >
+                            <Image
+                                src="/images/logo/logo.png"
+                                alt="NuGenesis Logo"
+                                width={130}
+                                height={56}
+                                className="md:w-auto w-64"
+                            />
+                        </Link>
+
                         <p className="text-gray-300 text-base mt-8 leading-relaxed text-center md:text-left">
-                            {companyDescription}
+                            NuGenesis is a gasless, zero-carbon blockchain system designed for mass crypto adoption. It features blockchain load balancers and system validators for infinite parallel processing, enabling faster transaction speeds with more users. Its multilingual cross-chain design supports seamless interoperability for dApps across Ethereum, Substrate, Bitcoin, and 29 other systems.
                         </p>
                     </div>
 

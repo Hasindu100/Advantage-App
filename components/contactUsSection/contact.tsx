@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
 
                             <div className="w-full text-center">
                                 <h1 className="capitalize text-custom-4 md:text-custom-2 tracking-custom-2 font-extrabold">
-                                    Want to join the NuGenesis Team?
+                                    Want to join <br /> the NuGenesis Team?
                                 </h1>
                             </div>
 

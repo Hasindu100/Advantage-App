@@ -16,17 +16,30 @@
     ],
     "services": [
         {
-            "href": "/services/quality-engineering",
-            "text": "Quality Engineering Services"
+            "href": "/home",
+            "text": "The NuGenesis flagship: NU Coin"
         },
         {
-            "href": "/services/software-engineering",
-            "text": "Software Engineering Solutions"
+            "href": "/home",
+            "text": "TROY Gold-backed token"
         },
         {
-            "href": "/services/data-science-ai-ml",
-            "text": "Data Science, AI And ML Services"
+            "href": "/home",
+            "text": "JUST SOCIAL"
+        },
+        {
+            "href": "/home",
+            "text": "Smart Contract Digital Notarised Contracts"
+        },
+        {
+            "href": "/home",
+            "text": "NFT City.Exchange"
+        },
+        {
+            "href": "/home",
+            "text": "The LedgerX Exchange Blockchain"
         }
+
     ],
     "links": [
         {
