@@ -50,14 +50,14 @@ const Hero = () => {
         </AnimatePresence>
         <div className='absolute w-full sm:w-[50%] md:w-full h-full top-0 '>
             
-            <div className='flex px-16 justify-end pb-12 flex-col w-full h-[90%]'>
+            <div className='flex px-8 md:px-16 justify-end pb-12 flex-col w-full h-[90%]'>
                 <AnimatePresence>
                     {/* Sliders text content */}
                     <motion.div key="modal" exit={{ opacity: 0 }} >
-                        <div className='flex justify-end flex-col w-[100%] md:w-[50%]'>
+                        <div className='flex justify-end flex-col w-[100%] md:w-[70%]'>
                             <h1 className='text-[#08fbf7] uppercase text-[20px] md:text-[28px] lg:text-[38px] font-bold mb-6'>BLOCKCHAIN BASED TECHNICAL INFRASTRUCTURE</h1>
                             <h3 className='text-emerald-300 uppercase text-[14px] md:text-[18px] lg:text-[25px] tracking-[0.2rem] font-semibold'>{heroContent.title}</h3>
-                            <p className='text-white w-full md:w-[70%]'>{heroContent.description}</p>
+                            <p className='text-white w-full md:w-[70%] text-sm md:text-base'>{heroContent.description}</p>
                             <Link href="#" className='rounded px-1 md:px-2 mt-4 py-1.5 xl:py-3.5 overflow-hidden group
                             bg-amber-600 relative hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-400
                             text-white hover:ring-2 hover:ring-offset-2 hover:ring-amber-600 transition-all
