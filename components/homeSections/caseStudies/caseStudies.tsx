@@ -28,7 +28,7 @@ const CaseStudies = () => {
                         <p className='font-base text-sm lg:text-base uppercase font-semibold text-white tracking-[0.5rem]'>About NuGenesis</p>
                     </div>
                     <div className='float-left text-start mt-[20px]'>
-                        <div className='float-left mb-[16px] text-gray-500 space-y-5'>
+                        <div className='text-lg sm:text-lg md:text-xl lg:text-xl float-left mb-[16px] text-gray-500 space-y-5'>
                             <p>
                                 NuGenesis is system of blockchain technologies to reap the potential in the mass adoption of the crypto market. It integrates blockchain load balancers and system validators to efficiently flow data into infinite parallel processing blockchains. The more users, the faster the transaction speed!
                             </p>

@@ -1,14 +1,15 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Introduction = () => {
   return (
     <div className='pt-16 flex items-center justify-center flex-col'>
-        <div className='flex items-center justify-center mx-auto w-[80%]'>
-            <div >
-                <h1 className='text-[#08fbf7] bg-cyan-950 rounded text-center text-[20px] md:text-[28px] lg:text-[38px] font-bold mb-2 md:mb-6'>BLOCKCHAIN BASED TECHNICAL INFRASTRUCTURE</h1>
+        <div className='flex items-center justify-center mx-auto w-full'>
+            <div>
+                <h1 className='text-white bg-cyan-950 rounded text-center text-[20px] md:text-[28px] lg:text-[38px] font-bold mb-2 md:mb-6'>BLOCKCHAIN BASED TECHNICAL INFRASTRUCTURE</h1>
                 <div className='float-left text-start mt-[20px]'>
-                    <div className='float-left mb-[16px] text-gray-500 space-y-5'>
-                        <p>
+                    <div className='text-lg sm:text-lg md:text-xl lg:text-xl float-left mb-[16px] text-gray-500 space-y-5'>
+                        <p className='first-letter:text-3xl first-letter:font-semibold'>
                             Welcome to the NuGenesis platform: the multi-chain, interoperable network system availing your optimal combination of private, public, open, permission and with degree of decentralisation to suit.
                         </p>
                         <p>
