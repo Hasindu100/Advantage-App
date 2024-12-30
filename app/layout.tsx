@@ -39,7 +39,6 @@ export default function RootLayout({
         <div className="mt-12">
           <Footer />
         </div>
-
       </body>
     </html>
   );

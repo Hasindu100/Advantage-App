@@ -86,7 +86,7 @@ export default function Products() {
     }, [activeSlide]);
 
     return (
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden" id='Products'>
             {/* Background frame and navigation controls - Desktop only */}
             <div className="flex relative">
                 <div className="hidden md:block absolute right-0 top-0">
