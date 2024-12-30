@@ -53,14 +53,14 @@ const ContentSection: FC = () => (
             {/* Main heading */}
             <div className="w-full">
                 <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl tracking-custom-2 font-extrabold">
-                    Mr. John Doe
+                    Mr. Tharindu Adhikari
                 </h1>
             </div>
 
             {/* Description text */}
-            <div className="max-w-2xl w-full tracking-normal text-gray-500 md:text-lg text-[18px] lg:text-xl leading-relaxed">
+            <div className="max-w-2xl w-full tracking-normal text-gray-500 md:text-lg text-[18px] lg:text-xl leading-relaxed text-justify">
                 <p>
-                    NuGenesis blockchain infrastructure is designed to revolutionize the way we interact with digital assets. Its unmatched scalability and speed set a new standard in the industry. With gasless interactive NFTs and support for augmented and virtual reality, we&apos;re not just building the metaverse; we&apos;re creating the backbone for the next generation of digital innovation.
+                    Tharindu Adhikari is an accomplished technology leader with over 15 years of expertise in Artificial Intelligence, Machine Learning, Blockchain, Data Science, and Big Data. As the Chief Technology Officer (CTO) of NuGenesis, Tharindu is responsible for driving the company’s technological vision and innovation strategy. His extensive experience in developing cutting-edge enterprise solutions and high-performance systems ensures NuGenesis remains at the forefront of blockchain and cryptocurrency advancements. Passionate about creating scalable, secure, and intelligent ecosystems, Tharindu leads with a focus on transformative technologies that deliver unmatched value to users and stakeholders. His collaborative approach and deep technical acumen continue to propel NuGenesis toward global excellence. 
                 </p>
             </div>
         </div>
@@ -98,8 +98,8 @@ const CTO: FC = () => {
                             <div className="border-[3px] border-custom-red rounded-[3px] p-4 md:p-8">
                                 <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
                                     <Image
-                                        src="/images/person/cto.jpg" 
-                                        alt="Chief Technology Officer"
+                                        src="/images/person/cto.png" 
+                                        alt="Chief Technology Officer Mr.Tharindu Adhikari"
                                         fill
                                         className="object-contain"
                                         priority

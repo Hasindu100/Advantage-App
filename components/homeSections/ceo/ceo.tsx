@@ -43,14 +43,14 @@ const ContentSection: FC = () => (
 
             <div className="w-full">
                 <h1 className="text-5xl font-extrabold tracking-tight">
-                    Mrs.<br />
-                    Jane Smith
+                    Mr.<br />
+                    Hussein Faraj
                 </h1>
             </div>
 
-            <div className="w-full text-gray-600 text-lg leading-relaxed">
+            <div className="w-full text-gray-600 text-lg leading-relaxed text-justify">
                 <p>
-                    Leading the charge in blockchain innovation, our vision at NuGenesis is to create a more accessible and efficient digital future. Our groundbreaking infrastructure solutions are designed to eliminate barriers and create new possibilities in the metaverse space, enabling seamless integration of digital assets into everyday life.
+                    Hussein Faraj is a visionary leader and strategic thinker with a proven track record in driving innovation and growth in the blockchain and technology sectors. As the Chief Executive Officer (CEO) of NuGenesis, Hussein brings a wealth of experience in business development, operational excellence, and industry expertise to spearhead the company’s mission of revolutionizing decentralized ecosystems. With a deep commitment to fostering cutting-edge solutions, Hussein leads NuGenesis with a focus on scalability, sustainability, and global adoption, ensuring the organization remains at the forefront of blockchain innovation. His leadership style emphasizes collaboration, innovation, and delivering transformative value to stakeholders worldwide.
                 </p>
             </div>
         </div>
@@ -77,8 +77,8 @@ const CEO: FC = () => {
                             <div className="border-2 border-blue-500 rounded-lg p-4">
                                 <div className="relative w-full h-96">
                                     <Image
-                                        src="/images/person/ceo.jpg"
-                                        alt="Chief Executive Officer"
+                                        src="/images/person/ceo.png"
+                                        alt="Chief Executive Officer Mr.Hussein Faraj"
                                         fill
                                         className="object-contain"
                                         priority
