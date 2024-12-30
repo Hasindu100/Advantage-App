@@ -20,13 +20,13 @@ const NewsAndUpdates = () => {
                     <div className='flex-none lg:w-[50px] mb-[10px]'>
                         <div className='flex px-6 py-1 bg-[--primaryColor] h-auto w-fit rounded-md lg:-rotate-90 lg:absolute top-[90px] -left-[96px]'>
                             <p className='font-base text-sm lg:text-base uppercase font-semibold text-white tracking-[0.5rem]'>Blog</p>
-                            <div className='lineWithDot hidden lg:block ml-[30px]'></div>
+                            <div className='lineWithDot hidden lg:block ml-[30px]  '></div>
                         </div>
                     </div>
                     
                     <div className='w-full lg:w-[calc(100%_-_45px)]'>
                         <h1 className='text-[28px] lg:text-[50px] font-bold leading-[30px] lg:leading-[60px] tracking-[0.055em] mb-[8px]'>News And Updates</h1>
-                        <p className='text-18px] text-gray-600 leading-[24px] tracking-[0.055em]'>Keep yourself updated with the latest industry updates and news from Zone24x7.</p>
+                        <p className='text-18px] text-gray-600 leading-[24px] tracking-[0.055em] flex justify-center items-center'>Keep yourself updated with the latest industry updates and news from NuGenesis.</p>
                     </div>
                 </div>
                 <Link href="">
