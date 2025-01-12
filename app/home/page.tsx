@@ -10,14 +10,13 @@ import Community from '../../components/homeSections/community/community';
 import CTO from '../../components/homeSections/cto/cto';
 import CEO from '../../components/homeSections/ceo/ceo';
 import Introduction from '@/components/homeSections/introduction/introduction';
-import { Component } from 'lucide-react';
-import Category from '@/components/homeSections/category/category';
+import CategoryCompenent from '@/components/homeSections/category/category';
 
 const commonClasses = "px-2 sm:px-4 md:px-8 lg:px-16 xl:px-28 max-w-full";
 
 const sections = [
   { id: 'introduction', component: <Introduction /> },
-  { id: 'caseStudies2', component: <Category /> },
+  { id: 'caseStudies2', component: <CategoryCompenent /> },
   { id: 'caseStudies', component: <CaseStudies /> },
   { id: 'product', component: <Product /> },
   { id: 'services', component: <Services /> },
