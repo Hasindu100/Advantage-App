@@ -1,8 +1,13 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { categoryList } from './data';
+import { Category } from './model';
 
-const categorySlider = ({ onData }: any) => {
+type Props = {
+    onData: any // eslint-disable-line @typescript-eslint/no-explicit-any
+}
+
+const categorySlider = ({ onData }: Props) => {
 
     const onClickCategory = (catId: number) => {
         const data = catId;
@@ -26,7 +31,7 @@ const categorySlider = ({ onData }: any) => {
       }}
     >
         {
-            categoryList.map((data: any) => {
+            categoryList.map((data: Category) => {
                 return (
                     <SwiperSlide key={data.id}>
 

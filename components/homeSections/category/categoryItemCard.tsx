@@ -7,11 +7,10 @@ type Props = {
     id: number,
     title: string,
     description: string,
-    imageUrl: string,
-    url: string
+    imageUrl: string
 }
 
-const categoryItemCard = ({id, title, description, imageUrl, url}: Props) => {
+const categoryItemCard = ({id, title, description, imageUrl}: Props) => {
   return (
     <div className='w-full relative group mb-[30px] cursor-pointer'> 
         <div className='px-[10px] py-[10px] border rounded-md hover:shadow-[0px_0px_33px_-10px_rgba(71,114,254,0.3)]'>

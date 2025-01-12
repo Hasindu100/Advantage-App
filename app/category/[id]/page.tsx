@@ -2,23 +2,18 @@
 import CategoryDetailsPopup from '@/components/categorySection/categoryDetailsPopup';
 import CategoryItemCard from '@/components/homeSections/category/categoryItemCard';
 import { CategoryItemList, categoryList } from '@/components/homeSections/category/data'
+import { Category, CategoryItem } from '@/components/homeSections/category/model';
 import TitleIcon from '@/components/homeUiElements/titleIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { NextRequest, NextResponse } from 'next/server';
 import { useState } from 'react';
 import { FaArrowLeft, FaInfoCircle } from 'react-icons/fa';
 
-export function middleware(request: NextRequest) {
-    console.log("DSFSDF")
-    return NextResponse.redirect(new URL('/home', request.url));
-  }
-
-const page = ({params}: any) => {
+const Page = () => {
     const { id } = useParams();
-    const categoryItem = id != null ? CategoryItemList.find((x: any) => x.id == id) : null;
-    const category = categoryItem != null ? categoryList.find((x: any) => x.id == categoryItem?.categoryId) : null;
+    const categoryItem = id != null ? CategoryItemList.find((x: CategoryItem) => x.id == Number(id)) : null;
+    const category = categoryItem != null ? categoryList.find((x: Category) => x.id == categoryItem?.categoryId) : null;
 
     const [showPopup, setShowPopup] = useState(false);
     const handleOpenPopup = () => setShowPopup(true);
@@ -83,9 +78,9 @@ const page = ({params}: any) => {
                     </div>
                     <div className='mb-[30px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 w-full lg:w-[calc(100%_-_55px)]'>
                         {
-                            CategoryItemList.filter((x: any) => x.categoryId == category?.id && x.id != categoryItem?.id).map((data: any) => {
+                            CategoryItemList.filter((x: CategoryItem) => x.categoryId == category?.id && x.id != categoryItem?.id).map((data: CategoryItem) => {
                                 return (
-                                    <CategoryItemCard key={data.id} id={data.id} title={data.title} description={data.description} imageUrl={data.imageUrl} url={data.url} />
+                                    <CategoryItemCard key={data.id} id={data.id} title={data.title} description={data.description} imageUrl={data.imageUrl} />
                                 )
                             })
                         }
@@ -113,4 +108,4 @@ const page = ({params}: any) => {
   )
 }
 
-export default page
+export default Page
