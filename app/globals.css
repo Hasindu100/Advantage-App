@@ -52,3 +52,11 @@ body {
       filter: invert(100%) hue-rotate(180deg) brightness(5);
   } 
 }
+
+.categoryBtn {
+  clip-path: inset(0 0 0 0);
+}
+
+.neon {
+  box-shadow: 0 0 5px rgb(217, 119, 6), 0 0 10px rgb(217, 119, 6), 0 0 20px rgb(217, 119, 6), 0 0 40px rgb(217, 119, 6);
+}
