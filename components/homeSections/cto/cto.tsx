@@ -53,7 +53,7 @@ const ContentSection: FC = () => (
             {/* Main heading */}
             <div className="w-full">
                 <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl tracking-custom-2 font-extrabold">
-                    Mr. Tharindu Adhikari
+                    Tharindu Adhikari
                 </h1>
             </div>
 
