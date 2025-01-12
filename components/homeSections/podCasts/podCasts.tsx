@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -13,14 +12,19 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 import { Podcast } from './types';
+import VideoPopup from '@/app/helper/videoPopup';
 
-const PodcastCard: React.FC<Podcast> = ({ imageUrl, link, title }) => {
+const PodcastCard: React.FC<Podcast> = ({ imageUrl, link, title, onOpenVideoPopup }) => {
+
+    // method to handle video popup open
+    const handleClick = (link: string) => {
+        onOpenVideoPopup(link);
+    }
+
     return (
-        <Link
-            href={link}
-            className="block relative transform-gpu"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div
+            className="block relative transform-gpu cursor-pointer"
+            onClick={() => handleClick(link) }
         >
             <div className="w-full h-[32rem] relative mt-20 mb-20 rounded-lg transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-gray-200 overflow-visible">
                 <Image
@@ -36,7 +40,7 @@ const PodcastCard: React.FC<Podcast> = ({ imageUrl, link, title }) => {
                     </span>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
 
@@ -45,6 +49,14 @@ export default function PodCase() {
     const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
     const { podcasts } = podcastData;
+
+    const [videoUrl, setVideoUrl] = useState('');
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const openPopup = (link: string) => { 
+        setVideoUrl(link);
+        setIsPopupOpen(true); 
+    }
+    const closePopup = () => setIsPopupOpen(false);
 
     return (
         <div className="min-h-screen bg-gray-900 flex items-center justify-center mt-12">
@@ -80,12 +92,18 @@ export default function PodCase() {
                     className="py-8"
                 >
                     {podcasts.map((podcast) => (
-                        <SwiperSlide key={podcast.id} className="flex items-center justify-center">
-                            <PodcastCard title={''} description={''} {...podcast} />
+                        <SwiperSlide key={podcast.id} className="flex items-center justify-center cursor-grab">
+                            <PodcastCard title={''} description={''} {...podcast} onOpenVideoPopup={openPopup} />
                         </SwiperSlide>
                     ))}
                 </Swiper>
             </div>
+
+            <VideoPopup
+                videoUrl={videoUrl}
+                isOpen={isPopupOpen}
+                onClose={closePopup}
+            />
         </div>
     );
 }

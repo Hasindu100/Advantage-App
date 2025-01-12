@@ -43,7 +43,6 @@ const ContentSection: FC = () => (
 
             <div className="w-full">
                 <h1 className="text-5xl font-extrabold tracking-tight">
-                    Mr.<br />
                     Hussein Faraj
                 </h1>
             </div>
